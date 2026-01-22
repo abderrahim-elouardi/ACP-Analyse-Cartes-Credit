@@ -1,0 +1,109 @@
+---
+title: "Analyse Exploratoire"
+output: 
+  github_document:
+    toc: true        # table des matières optionnelle
+    fig_width: 6     # largeur des graphiques
+    fig_height: 4    # hauteur des graphiques
+---
+
+```{r setup, include=FALSE}
+# Pour les graphiques
+suppressWarnings(suppressMessages(install.packages("ggplot2")))
+suppressWarnings(suppressMessages(install.packages("reshape2")))
+library(ggplot2)
+library(reshape2)
+
+# data <- read.csv("../data/processed/credit_card_clean.csv")
+
+# Afficher les premières lignes et structure
+head(data)
+str(data)
+
+# Sélectionner les colonnes numériques uniquement
+numeric_cols <- sapply(data, is.numeric)
+num_cols <- names(data)[numeric_cols]
+print(paste("Colonnes numériques trouvées:", paste(num_cols, collapse=", ")))
+```
+
+```{r statistiques_descriptives}
+# Moyenne
+sapply(data, mean, na.rm = TRUE)
+
+# Médiane
+sapply(data, median, na.rm = TRUE)
+
+# Mode (fonction personnalisée, car R n'a pas de mode intégré)
+get_mode <- function(v) {
+  uniqv <- unique(v)
+  uniqv[which.max(tabulate(match(v, uniqv)))]
+}
+sapply(data, get_mode)
+
+# Écart-type
+sapply(data, sd, na.rm = TRUE)
+
+# Variance
+sapply(data, var, na.rm = TRUE)
+
+# Minimum
+sapply(data, min, na.rm = TRUE)
+
+# Maximum
+sapply(data, max, na.rm = TRUE)
+
+# Quartiles (25%, 50%, 75%)
+sapply(data, function(x) quantile(x, probs = c(0.25, 0.5, 0.75), na.rm = TRUE))
+
+# Percentiles (exemple : 10%, 90%)
+sapply(data, function(x) quantile(x, probs = c(0.1, 0.9), na.rm = TRUE))
+```
+
+```{r barplot_stats}
+# Vérifier que num_cols n'est pas vide
+if (length(num_cols) > 0) {
+  # Calculer moyenne et écart-type
+  stats <- data.frame(
+    variable = num_cols,
+    mean = sapply(data[, num_cols], mean, na.rm = TRUE),
+    sd = sapply(data[, num_cols], sd, na.rm = TRUE),
+    stringsAsFactors = FALSE
+  )
+  
+  # Barplot avec erreur ± écart-type
+  print(ggplot(stats, aes(x = reorder(variable, mean), y = mean)) +
+    geom_bar(stat="identity", fill="skyblue") +
+    geom_errorbar(aes(ymin = mean - sd, ymax = mean + sd), width = 0.4) +
+    theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+    labs(title="Moyenne ± Écart-type des variables", y="Valeur", x="Variable"))
+} else {
+  print("Erreur: Aucune colonne trouvée dans les données")
+}
+```
+
+```{r histograms}
+for (col in num_cols) {
+  p <- ggplot(data, aes_string(x = col)) +
+    geom_histogram(fill="lightgreen", color="black", bins=30) +
+    labs(title=paste("Distribution de", col), x=col, y="Fréquence")
+  print(p)
+}
+```
+
+```{r boxplots}
+# Boxplot pour chaque variable
+for (col in num_cols) {
+  p <- ggplot(data, aes(y = .data[[col]])) +
+    geom_boxplot(fill="pink", color="black") +
+    labs(title=paste("Boxplot de", col), y=col) +
+    theme_minimal() +
+    theme(axis.text.x = element_blank(),
+          axis.ticks.x = element_blank())
+  print(p)
+}
+```
+
+
+
+
+
