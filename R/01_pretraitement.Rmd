@@ -1,0 +1,115 @@
+---
+title: "01_pretraitement"
+output: html_document
+date: "2026-01-22"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Loading data
+
+start with loading data
+
+```{r}
+  data <- read.csv("C:\\Users\\EL OUARDI\\Desktop\\projet statistique\\ACP-Analyse-Cartes-Credit\\data\\raw\\CC GENERAL (1).csv")
+head(data)
+
+```
+
+## Drop the CUST_ID column
+
+```{r}
+data$CUST_ID <- NULL
+```
+
+## number of lines
+
+```{r}
+dim(data)
+```
+
+##variables types
+
+```{r}
+str(data)
+```
+
+## Some Statuesque for each column
+
+```{r}
+
+head(data)       # voir les premières lignes
+str(data)        # structure
+summary(data)    # résumé statistique
+
+```
+
+##Columns names
+
+```{r}
+names(data)
+```
+
+## Number of NA for each column
+
+```{r}
+colSums(is.na(data))
+```
+
+## Managing duplicating values
+
+so we don't have duplicating values
+
+```{r}
+sum(duplicated(data))
+
+```
+
+```{r}
+str(data)
+```
+
+### Managing outlier
+
+for the column CREDIT_LIMIT this the boxPlot
+
+```{r}
+boxplot(as.numeric(data$CREDIT_LIMIT), na.rm = TRUE, main="Credit Limit")
+
+```
+
+## Managing the outlier values
+
+```{r}
+cols_numeriques <- names(data)[sapply(data, is.numeric)]
+
+```
+
+```{r}
+# 1. Identifier les colonnes numériques (on exclut CUST_ID qui est du texte)
+
+# 2. Maintenant vous pouvez lancer la boucle
+for (col in cols_numeriques) {
+  Q1 <- quantile(data[[col]], 0.25, na.rm = TRUE)
+  Q3 <- quantile(data[[col]], 0.75, na.rm = TRUE)
+  IQR <- Q3 - Q1
+  
+  borne_inf <- Q1 - 1.5 * IQR
+  borne_sup <- Q3 + 1.5 * IQR
+  
+  # Filtrage
+  data <- data[!is.na(data[[col]]) & data[[col]] >= borne_inf & data[[col]] <= borne_sup, ]
+}
+```
+
+```{r}
+
+```
+
+##saving data
+
+```{r}
+write.csv(data, "C:\\Users\\EL OUARDI\\Desktop\\projet statistique\\ACP-Analyse-Cartes-Credit\\data\\processed\\credit_card_clean.csv", row.names = FALSE)
+```
