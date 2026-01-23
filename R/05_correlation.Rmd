@@ -27,3 +27,23 @@ print(matrice_corr)
 ```{r}
 write.csv(matrice_corr, "C:\\Users\\EL OUARDI\\Desktop\\projet statistique\\ACP-Analyse-Cartes-Credit\\data\\processed\\matrice_corr.csv", row.names = FALSE)
 ```
+
+## displing Corr matrixe
+
+```{r}
+library(kableExtra)
+library(magrittr)
+library(webshot2)
+# 1. On prépare les données
+df_corr <- as.data.frame(round(matrice_corr, 2))
+
+# 2. On crée le tableau avec un dégradé de bleu (style Pandas/Seaborn)
+df_corr |>
+  kbl() |>
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = F) |>
+  column_spec(1, bold = T, border_right = T) |>
+  column_spec(2:ncol(df_corr)+1, 
+              background = spec_color(as.matrix(df_corr), end = 0.9, option = "D", direction = -1))
+
+save_kable(df_corr, file = "C:\\Users\\EL OUARDI\\Desktop\\projet statistique\\ACP-Analyse-Cartes-Credit\\R\\images\\matrice_correlation.png")
+```
