@@ -99,6 +99,7 @@ fviz_pca_var(res.pca,
 ## matrice de correlation entre nos variables et les nouvelles axes
 
 ``` r
+write.csv(res.pca$var$coord, "C:\\Users\\EL OUARDI\\Desktop\\projet statistique\\ACP-Analyse-Cartes-Credit\\data\\processed\\data_after_ACP.csv", row.names = FALSE)
 print(res.pca$var$coord)
 ```
 
@@ -136,3 +137,25 @@ cat("L'inertie totale expliquée par les deux premiers axes est de :",
 ```
 
     ## L'inertie totale expliquée par les deux premiers axes est de : 47.85 %
+
+\##Calcul des scores des individus
+
+``` r
+# 1. Extraction des coordonnées des individus (les scores)
+# On se limite aux axes conservés (ici Dim 1 et Dim 2)
+scores_ind <- as.data.frame(res.pca$ind$coord[, 1:2])
+
+# 2. Renommer les colonnes pour plus de clarté
+colnames(scores_ind) <- c("Score_Depense", "Score_Tresorerie")
+
+# 3. Aperçu des scores pour les 5 premiers clients
+head(scores_ind)
+```
+
+    ##   Score_Depense Score_Tresorerie
+    ## 1    0.04166444        -2.884879
+    ## 2   -0.71457840        -1.526207
+    ## 3    2.45432650         1.038869
+    ## 4    1.64647430         1.135281
+    ## 5   -2.40885914         1.058930
+    ## 6    3.02272301        -0.717887
