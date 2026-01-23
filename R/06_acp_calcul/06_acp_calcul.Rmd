@@ -1,0 +1,70 @@
+---
+title: "06_acp_calcul"
+output: html_document
+date: "2026-01-23"
+---
+
+### Diagonalisation de la matrice de corrélation
+
+```{r}
+# =================================================================
+# ANALYSE EN COMPOSANTES PRINCIPALES (ACP) - VERSION SÉCURISÉE
+# =================================================================
+
+library(FactoMineR)
+library(factoextra)
+
+# 1. Calcul de l'ACP
+
+res.pca <- PCA(data_standardise, scale.unit = TRUE, ncp = 2, graph = FALSE)
+
+valeurs_propres <- get_eigenvalue(res.pca)
+
+# 2. Affichage pour vérification
+print("Résultat de la diagonalisation (Valeurs propres) :")
+print(round(valeurs_propres, 3))
+
+```
+
+### Extraction des composantes principales
+
+## Cercle des Corrélations
+
+```{r}
+# 1. On extrait les coordonnées des variables sur les axes conservés
+# Cela s'appelle aussi les "chargements" (loadings)
+var_extraction <- res.pca$var$coord
+
+# 2. Affichage des contributions pour les 2 premières composantes
+print("Coordonnées des variables sur les composantes extraites :")
+print(round(var_extraction[, 1:2], 3))
+
+# 3. Visualisation : Le Cercle des Corrélations
+# C'est l'outil principal de l'étape d'extraction
+fviz_pca_var(res.pca, 
+             col.var = "contrib", # Couleur selon la contribution
+             gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"),
+             repel = TRUE) +
+  labs(title = "Cercle des Corrélations - Composantes Extraites",
+       x = "Dimension 1", y = "Dimension 2")
+```
+
+## matrice de correlation entre nos variables et les nouvelles axes
+
+```{r}
+print(res.pca$var$coord)
+```
+
+## L'inertie totale expliquée par les deux premiers axes
+```{r}
+# 1. On s'assure que eig.val est un data.frame
+eig.val <- as.data.frame(get_eigenvalue(res.pca))
+
+# 2. On récupère la valeur cumulée de la 2ème ligne (Dim 1 + Dim 2)
+# On utilise les crochets [ligne, colonne] pour être 100% sûr
+inertie_2_axes <- eig.val[2, "cumulative.variance.percent"]
+
+# 3. Affichage propre
+cat("L'inertie totale expliquée par les deux premiers axes est de :", 
+    round(inertie_2_axes, 2), "%\n")
+```
