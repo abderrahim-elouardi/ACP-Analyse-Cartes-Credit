@@ -1,0 +1,46 @@
+---
+title: "04_centrage_reduction"
+output: html_document
+date: "2026-01-23"
+---
+
+## Loading data
+
+start with loading data
+
+```{r}
+  data <- read.csv("C:\\Users\\EL OUARDI\\Desktop\\projet statistique\\ACP-Analyse-Cartes-Credit\\data\\processed\\credit_card_clean.csv")
+head(data)
+
+```
+
+## Printing Data
+
+```{r}
+data
+```
+
+## Centering Data
+
+```{r}
+data_centred <- scale(data, center = TRUE, scale = FALSE)
+```
+
+```{r}
+# Convertir le résultat en dataframe (car scale() retourne une matrice)
+data_centred_frame <- as.data.frame(data_centred)
+data_centre_frame
+```
+
+##Data reduction
+
+```{r}
+data_standardise <- scale(data, center = TRUE, scale = TRUE)
+data_standardise
+```
+
+## Saving Data
+
+```{r}
+write.csv(data_standardise, "C:\\Users\\EL OUARDI\\Desktop\\projet statistique\\ACP-Analyse-Cartes-Credit\\data\\processed\\credit_card_clean_standardised.csv", row.names = FALSE)
+```

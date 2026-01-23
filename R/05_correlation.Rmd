@@ -1,0 +1,29 @@
+---
+title: "05_correlation"
+output: html_document
+date: "2026-01-23"
+---
+
+## Loading data
+
+start with loading data
+
+```{r}
+  data_standardise <- read.csv("C:\\Users\\EL OUARDI\\Desktop\\projet statistique\\ACP-Analyse-Cartes-Credit\\data\\processed\\credit_card_clean_standardised.csv")
+```
+
+## calculing correlation matrice
+
+```{r}
+matrice_corr <- cor(data_standardise)
+```
+
+```{r}
+print(matrice_corr)
+```
+
+## saving
+
+```{r}
+write.csv(matrice_corr, "C:\\Users\\EL OUARDI\\Desktop\\projet statistique\\ACP-Analyse-Cartes-Credit\\data\\processed\\matrice_corr.csv", row.names = FALSE)
+```
