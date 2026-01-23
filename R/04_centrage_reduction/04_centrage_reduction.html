@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style type="text/css">
+@font-face {
+font-family: octicons-link;
+src: url(data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAZwABAAAAAACFQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEU0lHAAAGaAAAAAgAAAAIAAAAAUdTVUIAAAZcAAAACgAAAAoAAQAAT1MvMgAAAyQAAABJAAAAYFYEU3RjbWFwAAADcAAAAEUAAACAAJThvmN2dCAAAATkAAAABAAAAAQAAAAAZnBnbQAAA7gAAACyAAABCUM+8IhnYXNwAAAGTAAAABAAAAAQABoAI2dseWYAAAFsAAABPAAAAZwcEq9taGVhZAAAAsgAAAA0AAAANgh4a91oaGVhAAADCAAAABoAAAAkCA8DRGhtdHgAAAL8AAAADAAAAAwGAACfbG9jYQAAAsAAAAAIAAAACABiATBtYXhwAAACqAAAABgAAAAgAA8ASm5hbWUAAAToAAABQgAAAlXu73sOcG9zdAAABiwAAAAeAAAAME3QpOBwcmVwAAAEbAAAAHYAAAB/aFGpk3jaTY6xa8JAGMW/O62BDi0tJLYQincXEypYIiGJjSgHniQ6umTsUEyLm5BV6NDBP8Tpts6F0v+k/0an2i+itHDw3v2+9+DBKTzsJNnWJNTgHEy4BgG3EMI9DCEDOGEXzDADU5hBKMIgNPZqoD3SilVaXZCER3/I7AtxEJLtzzuZfI+VVkprxTlXShWKb3TBecG11rwoNlmmn1P2WYcJczl32etSpKnziC7lQyWe1smVPy/Lt7Kc+0vWY/gAgIIEqAN9we0pwKXreiMasxvabDQMM4riO+qxM2ogwDGOZTXxwxDiycQIcoYFBLj5K3EIaSctAq2kTYiw+ymhce7vwM9jSqO8JyVd5RH9gyTt2+J/yUmYlIR0s04n6+7Vm1ozezUeLEaUjhaDSuXHwVRgvLJn1tQ7xiuVv/ocTRF42mNgZGBgYGbwZOBiAAFGJBIMAAizAFoAAABiAGIAznjaY2BkYGAA4in8zwXi+W2+MjCzMIDApSwvXzC97Z4Ig8N/BxYGZgcgl52BCSQKAA3jCV8CAABfAAAAAAQAAEB42mNgZGBg4f3vACQZQABIMjKgAmYAKEgBXgAAeNpjYGY6wTiBgZWBg2kmUxoDA4MPhGZMYzBi1AHygVLYQUCaawqDA4PChxhmh/8ODDEsvAwHgMKMIDnGL0x7gJQCAwMAJd4MFwAAAHjaY2BgYGaA4DAGRgYQkAHyGMF8NgYrIM3JIAGVYYDT+AEjAwuDFpBmA9KMDEwMCh9i/v8H8sH0/4dQc1iAmAkALaUKLgAAAHjaTY9LDsIgEIbtgqHUPpDi3gPoBVyRTmTddOmqTXThEXqrob2gQ1FjwpDvfwCBdmdXC5AVKFu3e5MfNFJ29KTQT48Ob9/lqYwOGZxeUelN2U2R6+cArgtCJpauW7UQBqnFkUsjAY/kOU1cP+DAgvxwn1chZDwUbd6CFimGXwzwF6tPbFIcjEl+vvmM/byA48e6tWrKArm4ZJlCbdsrxksL1AwWn/yBSJKpYbq8AXaaTb8AAHja28jAwOC00ZrBeQNDQOWO//sdBBgYGRiYWYAEELEwMTE4uzo5Zzo5b2BxdnFOcALxNjA6b2ByTswC8jYwg0VlNuoCTWAMqNzMzsoK1rEhNqByEyerg5PMJlYuVueETKcd/89uBpnpvIEVomeHLoMsAAe1Id4AAAAAAAB42oWQT07CQBTGv0JBhagk7HQzKxca2sJCE1hDt4QF+9JOS0nbaaYDCQfwCJ7Au3AHj+LO13FMmm6cl7785vven0kBjHCBhfpYuNa5Ph1c0e2Xu3jEvWG7UdPDLZ4N92nOm+EBXuAbHmIMSRMs+4aUEd4Nd3CHD8NdvOLTsA2GL8M9PODbcL+hD7C1xoaHeLJSEao0FEW14ckxC+TU8TxvsY6X0eLPmRhry2WVioLpkrbp84LLQPGI7c6sOiUzpWIWS5GzlSgUzzLBSikOPFTOXqly7rqx0Z1Q5BAIoZBSFihQYQOOBEdkCOgXTOHA07HAGjGWiIjaPZNW13/+lm6S9FT7rLHFJ6fQbkATOG1j2OFMucKJJsxIVfQORl+9Jyda6Sl1dUYhSCm1dyClfoeDve4qMYdLEbfqHf3O/AdDumsjAAB42mNgYoAAZQYjBmyAGYQZmdhL8zLdDEydARfoAqIAAAABAAMABwAKABMAB///AA8AAQAAAAAAAAAAAAAAAAABAAAAAA==) format('woff');
+}
+body {
+-webkit-text-size-adjust: 100%;
+text-size-adjust: 100%;
+color: #333;
+font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+font-size: 16px;
+line-height: 1.6;
+word-wrap: break-word;
+}
+a {
+background-color: transparent;
+}
+a:active,
+a:hover {
+outline: 0;
+}
+strong {
+font-weight: bold;
+}
+h1 {
+font-size: 2em;
+margin: 0.67em 0;
+}
+img {
+border: 0;
+}
+hr {
+box-sizing: content-box;
+height: 0;
+}
+pre {
+overflow: auto;
+}
+code,
+kbd,
+pre {
+font-family: monospace, monospace;
+font-size: 1em;
+}
+input {
+color: inherit;
+font: inherit;
+margin: 0;
+}
+html input[disabled] {
+cursor: default;
+}
+input {
+line-height: normal;
+}
+input[type="checkbox"] {
+box-sizing: border-box;
+padding: 0;
+}
+table {
+border-collapse: collapse;
+border-spacing: 0;
+}
+td,
+th {
+padding: 0;
+}
+* {
+box-sizing: border-box;
+}
+input {
+font: 13px / 1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+a {
+color: #4078c0;
+text-decoration: none;
+}
+a:hover,
+a:active {
+text-decoration: underline;
+}
+hr {
+height: 0;
+margin: 15px 0;
+overflow: hidden;
+background: transparent;
+border: 0;
+border-bottom: 1px solid #ddd;
+}
+hr:before {
+display: table;
+content: "";
+}
+hr:after {
+display: table;
+clear: both;
+content: "";
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+margin-top: 15px;
+margin-bottom: 15px;
+line-height: 1.1;
+}
+h1 {
+font-size: 30px;
+}
+h2 {
+font-size: 21px;
+}
+h3 {
+font-size: 16px;
+}
+h4 {
+font-size: 14px;
+}
+h5 {
+font-size: 12px;
+}
+h6 {
+font-size: 11px;
+}
+blockquote {
+margin: 0;
+}
+ul,
+ol {
+padding: 0;
+margin-top: 0;
+margin-bottom: 0;
+}
+ol ol,
+ul ol {
+list-style-type: lower-roman;
+}
+ul ul ol,
+ul ol ol,
+ol ul ol,
+ol ol ol {
+list-style-type: lower-alpha;
+}
+dd {
+margin-left: 0;
+}
+code {
+font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+font-size: 12px;
+}
+pre {
+margin-top: 0;
+margin-bottom: 0;
+font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+.select::-ms-expand {
+opacity: 0;
+}
+.octicon {
+font: normal normal normal 16px/1 octicons-link;
+display: inline-block;
+text-decoration: none;
+text-rendering: auto;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+.octicon-link:before {
+content: '\f05c';
+}
+.markdown-body:before {
+display: table;
+content: "";
+}
+.markdown-body:after {
+display: table;
+clear: both;
+content: "";
+}
+.markdown-body>*:first-child {
+margin-top: 0 !important;
+}
+.markdown-body>*:last-child {
+margin-bottom: 0 !important;
+}
+a:not([href]) {
+color: inherit;
+text-decoration: none;
+}
+.anchor {
+display: inline-block;
+padding-right: 2px;
+margin-left: -18px;
+}
+.anchor:focus {
+outline: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+margin-top: 1em;
+margin-bottom: 16px;
+font-weight: bold;
+line-height: 1.4;
+}
+h1 .octicon-link,
+h2 .octicon-link,
+h3 .octicon-link,
+h4 .octicon-link,
+h5 .octicon-link,
+h6 .octicon-link {
+color: #000;
+vertical-align: middle;
+visibility: hidden;
+}
+h1:hover .anchor,
+h2:hover .anchor,
+h3:hover .anchor,
+h4:hover .anchor,
+h5:hover .anchor,
+h6:hover .anchor {
+text-decoration: none;
+}
+h1:hover .anchor .octicon-link,
+h2:hover .anchor .octicon-link,
+h3:hover .anchor .octicon-link,
+h4:hover .anchor .octicon-link,
+h5:hover .anchor .octicon-link,
+h6:hover .anchor .octicon-link {
+visibility: visible;
+}
+h1 {
+padding-bottom: 0.3em;
+font-size: 2.25em;
+line-height: 1.2;
+border-bottom: 1px solid #eee;
+}
+h1 .anchor {
+line-height: 1;
+}
+h2 {
+padding-bottom: 0.3em;
+font-size: 1.75em;
+line-height: 1.225;
+border-bottom: 1px solid #eee;
+}
+h2 .anchor {
+line-height: 1;
+}
+h3 {
+font-size: 1.5em;
+line-height: 1.43;
+}
+h3 .anchor {
+line-height: 1.2;
+}
+h4 {
+font-size: 1.25em;
+}
+h4 .anchor {
+line-height: 1.2;
+}
+h5 {
+font-size: 1em;
+}
+h5 .anchor {
+line-height: 1.1;
+}
+h6 {
+font-size: 1em;
+color: #777;
+}
+h6 .anchor {
+line-height: 1.1;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table,
+pre {
+margin-top: 0;
+margin-bottom: 16px;
+}
+hr {
+height: 4px;
+padding: 0;
+margin: 16px 0;
+background-color: #e7e7e7;
+border: 0 none;
+}
+ul,
+ol {
+padding-left: 2em;
+}
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+margin-top: 0;
+margin-bottom: 0;
+}
+li>p {
+margin-top: 16px;
+}
+dl {
+padding: 0;
+}
+dl dt {
+padding: 0;
+margin-top: 16px;
+font-size: 1em;
+font-style: italic;
+font-weight: bold;
+}
+dl dd {
+padding: 0 16px;
+margin-bottom: 16px;
+}
+blockquote {
+padding: 0 15px;
+color: #777;
+border-left: 4px solid #ddd;
+}
+blockquote>:first-child {
+margin-top: 0;
+}
+blockquote>:last-child {
+margin-bottom: 0;
+}
+table {
+display: block;
+width: 100%;
+overflow: auto;
+word-break: normal;
+word-break: keep-all;
+}
+table th {
+font-weight: bold;
+}
+table th,
+table td {
+padding: 6px 13px;
+border: 1px solid #ddd;
+}
+table tr {
+background-color: #fff;
+border-top: 1px solid #ccc;
+}
+table tr:nth-child(2n) {
+background-color: #f8f8f8;
+}
+img {
+max-width: 100%;
+box-sizing: content-box;
+background-color: #fff;
+}
+code {
+padding: 0;
+padding-top: 0.2em;
+padding-bottom: 0.2em;
+margin: 0;
+font-size: 85%;
+background-color: rgba(0,0,0,0.04);
+border-radius: 3px;
+}
+code:before,
+code:after {
+letter-spacing: -0.2em;
+content: "\00a0";
+}
+pre>code {
+padding: 0;
+margin: 0;
+font-size: 100%;
+word-break: normal;
+white-space: pre;
+background: transparent;
+border: 0;
+}
+.highlight {
+margin-bottom: 16px;
+}
+.highlight pre,
+pre {
+padding: 16px;
+overflow: auto;
+font-size: 85%;
+line-height: 1.45;
+background-color: #f7f7f7;
+border-radius: 3px;
+}
+.highlight pre {
+margin-bottom: 0;
+word-break: normal;
+}
+pre {
+word-wrap: normal;
+}
+pre code {
+display: inline;
+max-width: initial;
+padding: 0;
+margin: 0;
+overflow: initial;
+line-height: inherit;
+word-wrap: normal;
+background-color: transparent;
+border: 0;
+}
+pre code:before,
+pre code:after {
+content: normal;
+}
+kbd {
+display: inline-block;
+padding: 3px 5px;
+font-size: 11px;
+line-height: 10px;
+color: #555;
+vertical-align: middle;
+background-color: #fcfcfc;
+border: solid 1px #ccc;
+border-bottom-color: #bbb;
+border-radius: 3px;
+box-shadow: inset 0 -1px 0 #bbb;
+}
+.pl-c {
+color: #969896;
+}
+.pl-c1,
+.pl-s .pl-v {
+color: #0086b3;
+}
+.pl-e,
+.pl-en {
+color: #795da3;
+}
+.pl-s .pl-s1,
+.pl-smi {
+color: #333;
+}
+.pl-ent {
+color: #63a35c;
+}
+.pl-k {
+color: #a71d5d;
+}
+.pl-pds,
+.pl-s,
+.pl-s .pl-pse .pl-s1,
+.pl-sr,
+.pl-sr .pl-cce,
+.pl-sr .pl-sra,
+.pl-sr .pl-sre {
+color: #183691;
+}
+.pl-v {
+color: #ed6a43;
+}
+.pl-id {
+color: #b52a1d;
+}
+.pl-ii {
+background-color: #b52a1d;
+color: #f8f8f8;
+}
+.pl-sr .pl-cce {
+color: #63a35c;
+font-weight: bold;
+}
+.pl-ml {
+color: #693a17;
+}
+.pl-mh,
+.pl-mh .pl-en,
+.pl-ms {
+color: #1d3e81;
+font-weight: bold;
+}
+.pl-mq {
+color: #008080;
+}
+.pl-mi {
+color: #333;
+font-style: italic;
+}
+.pl-mb {
+color: #333;
+font-weight: bold;
+}
+.pl-md {
+background-color: #ffecec;
+color: #bd2c00;
+}
+.pl-mi1 {
+background-color: #eaffea;
+color: #55a532;
+}
+.pl-mdr {
+color: #795da3;
+font-weight: bold;
+}
+.pl-mo {
+color: #1d3e81;
+}
+kbd {
+display: inline-block;
+padding: 3px 5px;
+font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+line-height: 10px;
+color: #555;
+vertical-align: middle;
+background-color: #fcfcfc;
+border: solid 1px #ccc;
+border-bottom-color: #bbb;
+border-radius: 3px;
+box-shadow: inset 0 -1px 0 #bbb;
+}
+.task-list-item {
+list-style-type: none;
+}
+.task-list-item+.task-list-item {
+margin-top: 3px;
+}
+.task-list-item input {
+margin: 0 0.35em 0.25em -1.6em;
+vertical-align: middle;
+}
+:checked+.radio-label {
+z-index: 1;
+position: relative;
+border-color: #4078c0;
+}
+.sourceLine {
+display: inline-block;
+}
+code .kw { color: #000000; }
+code .dt { color: #ed6a43; }
+code .dv { color: #009999; }
+code .bn { color: #009999; }
+code .fl { color: #009999; }
+code .ch { color: #009999; }
+code .st { color: #183691; }
+code .co { color: #969896; }
+code .ot { color: #0086b3; }
+code .al { color: #a61717; }
+code .fu { color: #63a35c; }
+code .er { color: #a61717; background-color: #e3d2d2; }
+code .wa { color: #000000; }
+code .cn { color: #008080; }
+code .sc { color: #008080; }
+code .vs { color: #183691; }
+code .ss { color: #183691; }
+code .im { color: #000000; }
+code .va {color: #008080; }
+code .cf { color: #000000; }
+code .op { color: #000000; }
+code .bu { color: #000000; }
+code .ex { color: #000000; }
+code .pp { color: #999999; }
+code .at { color: #008080; }
+code .do { color: #969896; }
+code .an { color: #008080; }
+code .cv { color: #008080; }
+code .in { color: #008080; }
+</style>
+<style>
+body {
+box-sizing: border-box;
+min-width: 200px;
+max-width: 980px;
+margin: 0 auto;
+padding: 45px;
+padding-top: 0px;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="id_04_centrage_reduction">04_centrage_reduction</h1>
+<p>2026-01-23</p>
+<h2 id="loading-data">Loading data</h2>
+<p>start with loading data</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>  data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;C:</span><span class="sc">\\</span><span class="st">Users</span><span class="sc">\\</span><span class="st">EL OUARDI</span><span class="sc">\\</span><span class="st">Desktop</span><span class="sc">\\</span><span class="st">projet statistique</span><span class="sc">\\</span><span class="st">ACP-Analyse-Cartes-Credit</span><span class="sc">\\</span><span class="st">data</span><span class="sc">\\</span><span class="st">processed</span><span class="sc">\\</span><span class="st">credit_card_clean.csv&quot;</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">head</span>(data)</span></code></pre></div>
+<pre><code>##      BALANCE BALANCE_FREQUENCY PURCHASES ONEOFF_PURCHASES INSTALLMENTS_PURCHASES
+## 1   40.90075          0.818182     95.40             0.00                   95.4
+## 2  817.71434          1.000000     16.00            16.00                    0.0
+## 3 1823.65274          1.000000    436.20             0.00                  436.2
+## 4 1014.92647          1.000000    861.49           661.49                  200.0
+## 5 2772.77273          1.000000      0.00             0.00                    0.0
+## 6  169.78168          1.000000    399.60             0.00                  399.6
+##   CASH_ADVANCE PURCHASES_FREQUENCY ONEOFF_PURCHASES_FREQUENCY
+## 1       0.0000            0.166667                   0.000000
+## 2       0.0000            0.083333                   0.083333
+## 3       0.0000            1.000000                   0.000000
+## 4       0.0000            0.333333                   0.083333
+## 5     346.8114            0.000000                   0.000000
+## 6       0.0000            1.000000                   0.000000
+##   PURCHASES_INSTALLMENTS_FREQUENCY CASH_ADVANCE_FREQUENCY CASH_ADVANCE_TRX PURCHASES_TRX
+## 1                         0.083333               0.000000                0             2
+## 2                         0.000000               0.000000                0             1
+## 3                         1.000000               0.000000                0            12
+## 4                         0.250000               0.000000                0             5
+## 5                         0.000000               0.083333                1             0
+## 6                         1.000000               0.000000                0            12
+##   CREDIT_LIMIT PAYMENTS MINIMUM_PAYMENTS PRC_FULL_PAYMENT
+## 1         1000 201.8021         139.5098                0
+## 2         1200 678.3348         244.7912                0
+## 3         2300 679.0651         532.0340                0
+## 4         7000 688.2786         311.9634                0
+## 5         3000 805.6480         989.9629                0
+## 6         3000 215.3061         163.0055                0</code></pre>
+<h2 id="printing-data">Printing Data</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>data</span></code></pre></div>
+<pre><code>##        BALANCE BALANCE_FREQUENCY PURCHASES ONEOFF_PURCHASES INSTALLMENTS_PURCHASES
+## 1    40.900749          0.818182     95.40             0.00                  95.40
+## 2   817.714335          1.000000     16.00            16.00                   0.00
+## 3  1823.652743          1.000000    436.20             0.00                 436.20
+## 4  1014.926473          1.000000    861.49           661.49                 200.00
+## 5  2772.772734          1.000000      0.00             0.00                   0.00
+## 6   169.781679          1.000000    399.60             0.00                 399.60
+## 7  1615.967240          1.000000    102.00           102.00                   0.00
+## 8   125.694817          1.000000    233.28             0.00                 233.28
+## 9    22.063490          1.000000    100.00             0.00                 100.00
+## 10 1656.350781          1.000000      0.00             0.00                   0.00
+## 11 1360.742377          1.000000      0.00             0.00                   0.00
+## 12  863.809833          1.000000    507.50           507.50                   0.00
+## 13 1565.681099          1.000000      0.00             0.00                   0.00
+## 14 1555.793701          1.000000     66.20            66.20                   0.00
+## 15 1758.059987          1.000000    412.33           325.21                  87.12
+## 16 1576.305029          1.000000      0.00             0.00                   0.00
+## 17  578.809679          1.000000    320.00             0.00                 320.00
+## 18   17.357563          0.909091    244.85            40.21                 204.64
+## 19 4037.305658          1.000000     45.00            45.00                   0.00
+## 20 1321.476080          1.000000     45.65            45.65                   0.00
+## 21 2441.542991          1.000000    808.00           808.00                   0.00
+## 22  408.656365          1.000000    941.64             0.00                 941.64
+## 23 1246.624558          1.000000    423.70           177.64                 246.06
+## 24 2662.629852          1.000000      0.00             0.00                   0.00
+## 25 4245.855092          1.000000   1957.30          1077.30                 880.00
+## 26   24.284970          0.636364    250.60             0.00                 250.60
+## 27  231.108995          1.000000    440.00             0.00                 440.00
+## 28  706.132889          1.000000    897.86           714.52                 183.34
+## 29  947.130810          1.000000    197.06           148.66                  48.40
+## 30  764.042156          0.818182      0.00             0.00                   0.00
+## 31 3057.400553          1.000000   1025.00          1025.00                   0.00
+## 32 1046.370410          1.000000    295.00           295.00                   0.00
+## 33 2737.367678          1.000000      0.00             0.00                   0.00
+## 34  871.568977          1.000000    648.22           115.00                 533.22
+## 35 1610.040203          1.000000    557.19           525.64                  31.55
+## 36 1608.451822          1.000000      0.00             0.00                   0.00
+## 37 1706.014379          1.000000    147.78             0.00                 147.78
+## 38  874.583247          1.000000    516.54           159.07                 357.47
+## 39  966.251742          1.000000    311.45           311.45                   0.00
+## 40   38.615644          0.727273    280.40           280.40                   0.00
+## 41  566.546048          0.909091    405.75           313.75                  92.00
+## 42   75.647479          0.727273    540.00             0.00                 540.00
+## 43   28.461629          1.000000    100.00           100.00                   0.00
+## 44 1070.999446          1.000000    990.70           482.00                 508.70
+## 45 2229.857287          1.000000     45.65            45.65                   0.00
+## 46 1874.716289          1.000000    301.10            83.00                 218.10
+## 47    6.390383          1.000000     79.66             0.00                  79.66
+## 48   19.508047          1.000000    193.14             0.00                 193.14
+## 49 3905.365959          1.000000    150.80           150.80                   0.00
+## 50 1873.084577          1.000000    126.57           126.57                   0.00
+## 51 2420.761135          1.000000      0.00             0.00                   0.00
+## 52  927.041961          1.000000      0.00             0.00                   0.00
+## 53   40.089221          1.000000    225.00             0.00                 225.00
+## 54  850.630114          1.000000      0.05             0.05                   0.00
+## 55 2669.160638          1.000000      0.00             0.00                   0.00
+## 56  907.982017          1.000000    216.94           216.94                   0.00
+## 57 1254.669100          1.000000    361.73           361.73                   0.00
+## 58 1543.287931          1.000000      0.00             0.00                   0.00
+## 59  601.920370          1.000000    983.77           603.77                 380.00
+## 60 1261.057330          1.000000      0.00             0.00                   0.00
+## 61  241.223955          0.909091    180.91           180.91                   0.00
+## 62 1528.571561          1.000000      0.00             0.00                   0.00
+##    CASH_ADVANCE PURCHASES_FREQUENCY ONEOFF_PURCHASES_FREQUENCY
+## 1       0.00000            0.166667                   0.000000
+## 2       0.00000            0.083333                   0.083333
+## 3       0.00000            1.000000                   0.000000
+## 4       0.00000            0.333333                   0.083333
+## 5     346.81139            0.000000                   0.000000
+## 6       0.00000            1.000000                   0.000000
+## 7     244.84049            0.166667                   0.166667
+## 8       0.00000            1.000000                   0.000000
+## 9       0.00000            0.416667                   0.000000
+## 10     99.26437            0.000000                   0.000000
+## 11   1481.58709            0.000000                   0.000000
+## 12    695.09716            0.166667                   0.166667
+## 13    321.35913            0.000000                   0.000000
+## 14      0.00000            0.083333                   0.083333
+## 15      0.00000            0.583333                   0.333333
+## 16    382.90855            0.000000                   0.000000
+## 17      0.00000            0.750000                   0.000000
+## 18      0.00000            0.666667                   0.166667
+## 19    104.23806            0.083333                   0.083333
+## 20    495.65793            0.083333                   0.083333
+## 21    959.85726            0.250000                   0.250000
+## 22      0.00000            1.000000                   0.000000
+## 23    412.39906            0.666667                   0.166667
+## 24    509.02380            0.000000                   0.000000
+## 25      0.00000            0.833333                   0.166667
+## 26      0.00000            0.583333                   0.000000
+## 27      0.00000            0.916667                   0.000000
+## 28    586.26897            0.916667                   0.333333
+## 29      0.00000            0.333333                   0.250000
+## 30   1307.10252            0.000000                   0.000000
+## 31      0.00000            0.083333                   0.083333
+## 32     93.57981            0.083333                   0.083333
+## 33    429.69116            0.000000                   0.000000
+## 34      0.00000            1.000000                   0.083333
+## 35      0.00000            0.250000                   0.083333
+## 36    205.73717            0.000000                   0.000000
+## 37   1657.09028            0.166667                   0.000000
+## 38      0.00000            1.000000                   0.333333
+## 39    955.95975            0.333333                   0.333333
+## 40      0.00000            0.250000                   0.250000
+## 41   1044.65162            0.500000                   0.166667
+## 42      0.00000            0.250000                   0.000000
+## 43      0.00000            0.083333                   0.083333
+## 44      0.00000            0.750000                   0.250000
+## 45      0.00000            0.083333                   0.083333
+## 46      0.00000            0.583333                   0.166667
+## 47      0.00000            1.000000                   0.000000
+## 48      0.00000            0.416667                   0.000000
+## 49   1659.19931            0.166667                   0.166667
+## 50    181.13938            0.250000                   0.250000
+## 51    567.23380            0.000000                   0.000000
+## 52    402.97416            0.000000                   0.000000
+## 53      0.00000            1.000000                   0.000000
+## 54   1700.63459            0.083333                   0.083333
+## 55    142.14132            0.000000                   0.000000
+## 56   1011.99794            0.166667                   0.166667
+## 57    198.68674            0.166667                   0.166667
+## 58     36.48183            0.000000                   0.000000
+## 59      0.00000            0.666667                   0.416667
+## 60    474.42984            0.000000                   0.000000
+## 61      0.00000            0.166667                   0.166667
+## 62    172.93112            0.000000                   0.000000
+##    PURCHASES_INSTALLMENTS_FREQUENCY CASH_ADVANCE_FREQUENCY CASH_ADVANCE_TRX PURCHASES_TRX
+## 1                          0.083333               0.000000                0             2
+## 2                          0.000000               0.000000                0             1
+## 3                          1.000000               0.000000                0            12
+## 4                          0.250000               0.000000                0             5
+## 5                          0.000000               0.083333                1             0
+## 6                          1.000000               0.000000                0            12
+## 7                          0.000000               0.250000                5             2
+## 8                          1.000000               0.000000                0            12
+## 9                          0.416667               0.000000                0             5
+## 10                         0.000000               0.083333                1             0
+## 11                         0.000000               0.083333                1             0
+## 12                         0.000000               0.083333                2             3
+## 13                         0.000000               0.250000                3             0
+## 14                         0.000000               0.000000                0             1
+## 15                         0.166667               0.000000                0            11
+## 16                         0.000000               0.416667                6             0
+## 17                         0.666667               0.000000                0             8
+## 18                         0.583333               0.000000                0            13
+## 19                         0.000000               0.083333                1             1
+## 20                         0.000000               0.083333                1             1
+## 21                         0.000000               0.333333                6             4
+## 22                         1.000000               0.000000                0            12
+## 23                         0.500000               0.083333                2            10
+## 24                         0.000000               0.333333                4             0
+## 25                         0.583333               0.000000                0            19
+## 26                         0.500000               0.000000                0             7
+## 27                         0.916667               0.000000                0            22
+## 28                         0.916667               0.250000                3            18
+## 29                         0.166667               0.000000                0             5
+## 30                         0.000000               0.166667                3             0
+## 31                         0.000000               0.000000                0             2
+## 32                         0.000000               0.083333                1             2
+## 33                         0.000000               0.416667                5             0
+## 34                         1.000000               0.000000                0            27
+## 35                         0.166667               0.000000                0             5
+## 36                         0.000000               0.166667                2             0
+## 37                         0.166667               0.250000                4             2
+## 38                         0.916667               0.000000                0            30
+## 39                         0.000000               0.083333                1            15
+## 40                         0.000000               0.000000                0             3
+## 41                         0.416667               0.333333                6            12
+## 42                         0.166667               0.000000                0             3
+## 43                         0.000000               0.000000                0             1
+## 44                         0.583333               0.000000                0            13
+## 45                         0.000000               0.000000                0             1
+## 46                         0.333333               0.000000                0            10
+## 47                         1.000000               0.000000                0            12
+## 48                         0.416667               0.000000                0             5
+## 49                         0.000000               0.416667                5             2
+## 50                         0.000000               0.083333                1             4
+## 51                         0.000000               0.083333                2             0
+## 52                         0.000000               0.333333                5             0
+## 53                         1.000000               0.000000                0            12
+## 54                         0.000000               0.333333                7             1
+## 55                         0.000000               0.166667                2             0
+## 56                         0.000000               0.166667                5             3
+## 57                         0.000000               0.083333                1             2
+## 58                         0.000000               0.083333                1             0
+## 59                         0.250000               0.000000                0            15
+## 60                         0.000000               0.250000                3             0
+## 61                         0.000000               0.000000                0             6
+## 62                         0.000000               0.166667                2             0
+##    CREDIT_LIMIT   PAYMENTS MINIMUM_PAYMENTS PRC_FULL_PAYMENT
+## 1          1000  201.80208        139.50979         0.000000
+## 2          1200  678.33476        244.79124         0.000000
+## 3          2300  679.06508        532.03399         0.000000
+## 4          7000  688.27857        311.96341         0.000000
+## 5          3000  805.64797        989.96287         0.000000
+## 6          3000  215.30614        163.00554         0.000000
+## 7          1700  890.17885        971.18321         0.000000
+## 8          1000  207.77372        164.74882         0.000000
+## 9          6900  160.76777        159.68444         0.000000
+## 10         1800  351.50020        634.56931         0.000000
+## 11         1500  378.29423        321.35414         0.000000
+## 12         4000  587.86645        286.44872         0.083333
+## 13         3500  691.82528        581.48192         0.000000
+## 14         1600  338.08366        837.21567         0.000000
+## 15         1800  777.45165        897.90544         0.000000
+## 16         2500  540.02223        352.88380         0.000000
+## 17         1500 1438.91057        190.18654         0.000000
+## 18         5000  357.80208        121.52342         0.181818
+## 19         4500 1073.84488        968.94127         0.000000
+## 20         1800  440.84044        312.56064         0.000000
+## 21         4000  532.74170       1026.97600         0.000000
+## 22         2500 1097.78942        176.61060         0.083333
+## 23         2000  577.05037        498.36542         0.000000
+## 24         3000  932.41886        709.20702         0.000000
+## 25         5000 1004.35474       1086.42891         0.000000
+## 26         3000  319.76290        173.63201         0.000000
+## 27         4000  554.11654        185.09104         0.000000
+## 28         1200  972.35805        184.52438         0.000000
+## 29         1000  492.20042        509.38418         0.000000
+## 30         7500 1566.80690        172.95973         0.000000
+## 31         7500  698.85410        819.68267         0.000000
+## 32         1200  439.40708        362.83819         0.000000
+## 33         3000  778.82799        721.79858         0.000000
+## 34         1200 1110.88642        208.29842         0.000000
+## 35         4000  422.71185        616.00584         0.000000
+## 36         1800  470.56598        408.79915         0.000000
+## 37         6000 1186.06276        374.59551         0.000000
+## 38          900  579.74931        693.89472         0.000000
+## 39         1500  277.52244        286.29933         0.000000
+## 40         6150  254.39298         55.79974         0.090909
+## 41         2000 1249.83514        313.05269         0.000000
+## 42         4000  548.96728         48.65993         0.000000
+## 43         4000  125.76917        104.85752         0.000000
+## 44         1400  505.31733        438.32402         0.000000
+## 45         2500  542.74630        628.21103         0.000000
+## 46         1950  586.97405       1089.04027         0.000000
+## 47         1500   75.89629         75.96774         0.000000
+## 48         2000  220.46377         71.96506         0.250000
+## 49         7500  990.52441        989.78329         0.000000
+## 50         2100  483.55746        524.42639         0.000000
+## 51         3000  871.71332        609.20678         0.000000
+## 52         1000  719.97424        339.55309         0.000000
+## 53         1500  325.57850        286.12259         0.166667
+## 54         1000 1084.28113        367.40954         0.000000
+## 55         3000  642.77706       1122.07614         0.000000
+## 56         3200  222.02316        300.21005         0.000000
+## 57         1500  535.60682        432.68808         0.000000
+## 58         1800  548.58939        529.34049         0.000000
+## 59         2400  389.41116        219.46570         0.000000
+## 60         1500  866.86502        354.38100         0.000000
+## 61         1400  802.85858        220.45553         0.000000
+## 62         1600  353.58237        559.03030         0.000000
+##  [ reached &#39;max&#39; / getOption(&quot;max.print&quot;) -- omitted 1973 rows ]</code></pre>
+<h2 id="centering-data">Centering Data</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>data_centred <span class="ot">&lt;-</span> <span class="fu">scale</span>(data, <span class="at">center =</span> <span class="cn">TRUE</span>, <span class="at">scale =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="co"># Convertir le résultat en dataframe (car scale() retourne une matrice)</span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>data_centred_frame <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(data_centred)</span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>data_centre_frame</span></code></pre></div>
+<pre><code>##        BALANCE BALANCE_FREQUENCY  PURCHASES ONEOFF_PURCHASES INSTALLMENTS_PURCHASES
+## 1   -984.04684       -0.15130653 -166.12339      -117.543543             -48.763799
+## 2   -207.23326        0.03051147 -245.52339      -101.543543            -144.163799
+## 3    798.70515        0.03051147  174.67661      -117.543543             292.036201
+## 4    -10.02112        0.03051147  599.96661       543.946457              55.836201
+## 5   1747.82514        0.03051147 -261.52339      -117.543543            -144.163799
+## 6   -855.16591        0.03051147  138.07661      -117.543543             255.436201
+## 7    591.01965        0.03051147 -159.52339       -15.543543            -144.163799
+## 8   -899.25278        0.03051147  -28.24339      -117.543543              89.116201
+## 9  -1002.88410        0.03051147 -161.52339      -117.543543             -44.163799
+## 10   631.40319        0.03051147 -261.52339      -117.543543            -144.163799
+## 11   335.79478        0.03051147 -261.52339      -117.543543            -144.163799
+## 12  -161.13776        0.03051147  245.97661       389.956457            -144.163799
+## 13   540.73351        0.03051147 -261.52339      -117.543543            -144.163799
+## 14   530.84611        0.03051147 -195.32339       -51.343543            -144.163799
+## 15   733.11239        0.03051147  150.80661       207.666457             -57.043799
+## 16   551.35744        0.03051147 -261.52339      -117.543543            -144.163799
+## 17  -446.13791        0.03051147   58.47661      -117.543543             175.836201
+## 18 -1007.59003       -0.06039753  -16.67339       -77.333543              60.476201
+## 19  3012.35806        0.03051147 -216.52339       -72.543543            -144.163799
+## 20   296.52849        0.03051147 -215.87339       -71.893543            -144.163799
+## 21  1416.59540        0.03051147  546.47661       690.456457            -144.163799
+## 22  -616.29123        0.03051147  680.11661      -117.543543             797.476201
+## 23   221.67696        0.03051147  162.17661        60.096457             101.896201
+## 24  1637.68226        0.03051147 -261.52339      -117.543543            -144.163799
+## 25  3220.90750        0.03051147 1695.77661       959.756457             735.836201
+## 26 -1000.66262       -0.33312453  -10.92339      -117.543543             106.436201
+## 27  -793.83860        0.03051147  178.47661      -117.543543             295.836201
+## 28  -318.81470        0.03051147  636.33661       596.976457              39.176201
+## 29   -77.81678        0.03051147  -64.46339        31.116457             -95.763799
+## 30  -260.90544       -0.15130653 -261.52339      -117.543543            -144.163799
+## 31  2032.45296        0.03051147  763.47661       907.456457            -144.163799
+## 32    21.42282        0.03051147   33.47661       177.456457            -144.163799
+## 33  1712.42008        0.03051147 -261.52339      -117.543543            -144.163799
+## 34  -153.37862        0.03051147  386.69661        -2.543543             389.056201
+## 35   585.09261        0.03051147  295.66661       408.096457            -112.613799
+## 36   583.50423        0.03051147 -261.52339      -117.543543            -144.163799
+## 37   681.06679        0.03051147 -113.74339      -117.543543               3.616201
+## 38  -150.36435        0.03051147  255.01661        41.526457             213.306201
+## 39   -58.69585        0.03051147   49.92661       193.906457            -144.163799
+## 40  -986.33195       -0.24221553   18.87661       162.856457            -144.163799
+## 41  -458.40155       -0.06039753  144.22661       196.206457             -52.163799
+## 42  -949.30011       -0.24221553  278.47661      -117.543543             395.836201
+## 43  -996.48596        0.03051147 -161.52339       -17.543543            -144.163799
+## 44    46.05185        0.03051147  729.17661       364.456457             364.536201
+## 45  1204.90969        0.03051147 -215.87339       -71.893543            -144.163799
+## 46   849.76870        0.03051147   39.57661       -34.543543              73.936201
+## 47 -1018.55721        0.03051147 -181.86339      -117.543543             -64.503799
+## 48 -1005.43955        0.03051147  -68.38339      -117.543543              48.976201
+## 49  2880.41837        0.03051147 -110.72339        33.256457            -144.163799
+## 50   848.13698        0.03051147 -134.95339         9.026457            -144.163799
+## 51  1395.81354        0.03051147 -261.52339      -117.543543            -144.163799
+## 52   -97.90563        0.03051147 -261.52339      -117.543543            -144.163799
+## 53  -984.85837        0.03051147  -36.52339      -117.543543              80.836201
+## 54  -174.31748        0.03051147 -261.47339      -117.493543            -144.163799
+## 55  1644.21304        0.03051147 -261.52339      -117.543543            -144.163799
+## 56  -116.96558        0.03051147  -44.58339        99.396457            -144.163799
+## 57   229.72151        0.03051147  100.20661       244.186457            -144.163799
+## 58   518.34034        0.03051147 -261.52339      -117.543543            -144.163799
+## 59  -423.02722        0.03051147  722.24661       486.226457             235.836201
+## 60   236.10974        0.03051147 -261.52339      -117.543543            -144.163799
+## 61  -783.72364       -0.06039753  -80.61339        63.366457            -144.163799
+## 62   503.62397        0.03051147 -261.52339      -117.543543            -144.163799
+##    CASH_ADVANCE PURCHASES_FREQUENCY ONEOFF_PURCHASES_FREQUENCY
+## 1    -334.36294         -0.17780472                -0.07219488
+## 2    -334.36294         -0.26113872                 0.01113812
+## 3    -334.36294          0.65552828                -0.07219488
+## 4    -334.36294         -0.01113872                 0.01113812
+## 5      12.44845         -0.34447172                -0.07219488
+## 6    -334.36294          0.65552828                -0.07219488
+## 7     -89.52246         -0.17780472                 0.09447212
+## 8    -334.36294          0.65552828                -0.07219488
+## 9    -334.36294          0.07219528                -0.07219488
+## 10   -235.09858         -0.34447172                -0.07219488
+## 11   1147.22415         -0.34447172                -0.07219488
+## 12    360.73421         -0.17780472                 0.09447212
+## 13    -13.00381         -0.34447172                -0.07219488
+## 14   -334.36294         -0.26113872                 0.01113812
+## 15   -334.36294          0.23886128                 0.26113812
+## 16     48.54560         -0.34447172                -0.07219488
+## 17   -334.36294          0.40552828                -0.07219488
+## 18   -334.36294          0.32219528                 0.09447212
+## 19   -230.12488         -0.26113872                 0.01113812
+## 20    161.29499         -0.26113872                 0.01113812
+## 21    625.49432         -0.09447172                 0.17780512
+## 22   -334.36294          0.65552828                -0.07219488
+## 23     78.03611          0.32219528                 0.09447212
+## 24    174.66086         -0.34447172                -0.07219488
+## 25   -334.36294          0.48886128                 0.09447212
+## 26   -334.36294          0.23886128                -0.07219488
+## 27   -334.36294          0.57219528                -0.07219488
+## 28    251.90602          0.57219528                 0.26113812
+## 29   -334.36294         -0.01113872                 0.17780512
+## 30    972.73957         -0.34447172                -0.07219488
+## 31   -334.36294         -0.26113872                 0.01113812
+## 32   -240.78314         -0.26113872                 0.01113812
+## 33     95.32822         -0.34447172                -0.07219488
+## 34   -334.36294          0.65552828                 0.01113812
+## 35   -334.36294         -0.09447172                 0.01113812
+## 36   -128.62578         -0.34447172                -0.07219488
+## 37   1322.72734         -0.17780472                -0.07219488
+## 38   -334.36294          0.65552828                 0.26113812
+## 39    621.59680         -0.01113872                 0.26113812
+## 40   -334.36294         -0.09447172                 0.17780512
+## 41    710.28867          0.15552828                 0.09447212
+## 42   -334.36294         -0.09447172                -0.07219488
+## 43   -334.36294         -0.26113872                 0.01113812
+## 44   -334.36294          0.40552828                 0.17780512
+## 45   -334.36294         -0.26113872                 0.01113812
+## 46   -334.36294          0.23886128                 0.09447212
+## 47   -334.36294          0.65552828                -0.07219488
+## 48   -334.36294          0.07219528                -0.07219488
+## 49   1324.83637         -0.17780472                 0.09447212
+## 50   -153.22357         -0.09447172                 0.17780512
+## 51    232.87085         -0.34447172                -0.07219488
+## 52     68.61122         -0.34447172                -0.07219488
+## 53   -334.36294          0.65552828                -0.07219488
+## 54   1366.27164         -0.26113872                 0.01113812
+## 55   -192.22162         -0.34447172                -0.07219488
+## 56    677.63500         -0.17780472                 0.09447212
+## 57   -135.67620         -0.17780472                 0.09447212
+## 58   -297.88111         -0.34447172                -0.07219488
+## 59   -334.36294          0.32219528                 0.34447212
+## 60    140.06690         -0.34447172                -0.07219488
+## 61   -334.36294         -0.17780472                 0.09447212
+## 62   -161.43183         -0.34447172                -0.07219488
+##    PURCHASES_INSTALLMENTS_FREQUENCY CASH_ADVANCE_FREQUENCY CASH_ADVANCE_TRX PURCHASES_TRX
+## 1                       -0.19463589           -0.091031909       -1.4918919    -3.8108108
+## 2                       -0.27796889           -0.091031909       -1.4918919    -4.8108108
+## 3                        0.72203111           -0.091031909       -1.4918919     6.1891892
+## 4                       -0.02796889           -0.091031909       -1.4918919    -0.8108108
+## 5                       -0.27796889           -0.007698909       -0.4918919    -5.8108108
+## 6                        0.72203111           -0.091031909       -1.4918919     6.1891892
+## 7                       -0.27796889            0.158968091        3.5081081    -3.8108108
+## 8                        0.72203111           -0.091031909       -1.4918919     6.1891892
+## 9                        0.13869811           -0.091031909       -1.4918919    -0.8108108
+## 10                      -0.27796889           -0.007698909       -0.4918919    -5.8108108
+## 11                      -0.27796889           -0.007698909       -0.4918919    -5.8108108
+## 12                      -0.27796889           -0.007698909        0.5081081    -2.8108108
+## 13                      -0.27796889            0.158968091        1.5081081    -5.8108108
+## 14                      -0.27796889           -0.091031909       -1.4918919    -4.8108108
+## 15                      -0.11130189           -0.091031909       -1.4918919     5.1891892
+## 16                      -0.27796889            0.325635091        4.5081081    -5.8108108
+## 17                       0.38869811           -0.091031909       -1.4918919     2.1891892
+## 18                       0.30536411           -0.091031909       -1.4918919     7.1891892
+## 19                      -0.27796889           -0.007698909       -0.4918919    -4.8108108
+## 20                      -0.27796889           -0.007698909       -0.4918919    -4.8108108
+## 21                      -0.27796889            0.242301091        4.5081081    -1.8108108
+## 22                       0.72203111           -0.091031909       -1.4918919     6.1891892
+## 23                       0.22203111           -0.007698909        0.5081081     4.1891892
+## 24                      -0.27796889            0.242301091        2.5081081    -5.8108108
+## 25                       0.30536411           -0.091031909       -1.4918919    13.1891892
+## 26                       0.22203111           -0.091031909       -1.4918919     1.1891892
+## 27                       0.63869811           -0.091031909       -1.4918919    16.1891892
+## 28                       0.63869811            0.158968091        1.5081081    12.1891892
+## 29                      -0.11130189           -0.091031909       -1.4918919    -0.8108108
+## 30                      -0.27796889            0.075635091        1.5081081    -5.8108108
+## 31                      -0.27796889           -0.091031909       -1.4918919    -3.8108108
+## 32                      -0.27796889           -0.007698909       -0.4918919    -3.8108108
+## 33                      -0.27796889            0.325635091        3.5081081    -5.8108108
+## 34                       0.72203111           -0.091031909       -1.4918919    21.1891892
+## 35                      -0.11130189           -0.091031909       -1.4918919    -0.8108108
+## 36                      -0.27796889            0.075635091        0.5081081    -5.8108108
+## 37                      -0.11130189            0.158968091        2.5081081    -3.8108108
+## 38                       0.63869811           -0.091031909       -1.4918919    24.1891892
+## 39                      -0.27796889           -0.007698909       -0.4918919     9.1891892
+## 40                      -0.27796889           -0.091031909       -1.4918919    -2.8108108
+## 41                       0.13869811            0.242301091        4.5081081     6.1891892
+## 42                      -0.11130189           -0.091031909       -1.4918919    -2.8108108
+## 43                      -0.27796889           -0.091031909       -1.4918919    -4.8108108
+## 44                       0.30536411           -0.091031909       -1.4918919     7.1891892
+## 45                      -0.27796889           -0.091031909       -1.4918919    -4.8108108
+## 46                       0.05536411           -0.091031909       -1.4918919     4.1891892
+## 47                       0.72203111           -0.091031909       -1.4918919     6.1891892
+## 48                       0.13869811           -0.091031909       -1.4918919    -0.8108108
+## 49                      -0.27796889            0.325635091        3.5081081    -3.8108108
+## 50                      -0.27796889           -0.007698909       -0.4918919    -1.8108108
+## 51                      -0.27796889           -0.007698909        0.5081081    -5.8108108
+## 52                      -0.27796889            0.242301091        3.5081081    -5.8108108
+## 53                       0.72203111           -0.091031909       -1.4918919     6.1891892
+## 54                      -0.27796889            0.242301091        5.5081081    -4.8108108
+## 55                      -0.27796889            0.075635091        0.5081081    -5.8108108
+## 56                      -0.27796889            0.075635091        3.5081081    -2.8108108
+## 57                      -0.27796889           -0.007698909       -0.4918919    -3.8108108
+## 58                      -0.27796889           -0.007698909       -0.4918919    -5.8108108
+## 59                      -0.02796889           -0.091031909       -1.4918919     9.1891892
+## 60                      -0.27796889            0.158968091        1.5081081    -5.8108108
+## 61                      -0.27796889           -0.091031909       -1.4918919     0.1891892
+## 62                      -0.27796889            0.075635091        0.5081081    -5.8108108
+##    CREDIT_LIMIT    PAYMENTS MINIMUM_PAYMENTS PRC_FULL_PAYMENT
+## 1   -1579.09091 -382.042914       -254.09251      -0.01985161
+## 2   -1379.09091   94.489765       -148.81106      -0.01985161
+## 3    -279.09091   95.220084        138.43169      -0.01985161
+## 4    4420.90909  104.433570        -81.63889      -0.01985161
+## 5     420.90909  221.802976        596.36057      -0.01985161
+## 6     420.90909 -368.538856       -230.59676      -0.01985161
+## 7    -879.09091  306.333847        577.58091      -0.01985161
+## 8   -1579.09091 -376.071283       -228.85348      -0.01985161
+## 9    4320.90909 -423.077225       -233.91785      -0.01985161
+## 10   -779.09091 -232.344799        240.96702      -0.01985161
+## 11  -1079.09091 -205.550771        -72.24816      -0.01985161
+## 12   1420.90909    4.021453       -107.15358       0.06348139
+## 13    920.90909  107.980281        187.87962      -0.01985161
+## 14   -979.09091 -245.761337        443.61338      -0.01985161
+## 15   -779.09091  193.606650        504.30315      -0.01985161
+## 16    -79.09091  -43.822773        -40.71849      -0.01985161
+## 17  -1079.09091  855.065571       -203.41575      -0.01985161
+## 18   2420.90909 -226.042916       -272.07888       0.16196639
+## 19   1920.90909  489.999887        575.33897      -0.01985161
+## 20   -779.09091 -143.004559        -81.04166      -0.01985161
+## 21   1420.90909  -51.103299        633.37370      -0.01985161
+## 22    -79.09091  513.944422       -216.99169       0.06348139
+## 23   -579.09091   -6.794625        104.76312      -0.01985161
+## 24    420.90909  348.573857        315.60472      -0.01985161
+## 25   2420.90909  420.509742        692.82661      -0.01985161
+## 26    420.90909 -264.082095       -219.97029      -0.01985161
+## 27   1420.90909  -29.728456       -208.51126      -0.01985161
+## 28  -1379.09091  388.513050       -209.07792      -0.01985161
+## 29  -1579.09091  -91.644579        115.78189      -0.01985161
+## 30   4920.90909  982.961899       -220.64257      -0.01985161
+## 31   4920.90909  115.009097        426.08037      -0.01985161
+## 32  -1379.09091 -144.437916        -30.76411      -0.01985161
+## 33    420.90909  194.982995        328.19628      -0.01985161
+## 34  -1379.09091  527.041427       -185.30387      -0.01985161
+## 35   1420.90909 -161.133150        222.40354      -0.01985161
+## 36   -779.09091 -113.279014         15.19685      -0.01985161
+## 37   3420.90909  602.217767        -19.00679      -0.01985161
+## 38  -1679.09091   -4.095690        300.29242      -0.01985161
+## 39  -1079.09091 -306.322559       -107.30297      -0.01985161
+## 40   3570.90909 -329.452014       -337.80256       0.07105739
+## 41   -579.09091  665.990144        -80.54961      -0.01985161
+## 42   1420.90909  -34.877717       -344.94236      -0.01985161
+## 43   1420.90909 -458.075829       -288.74478      -0.01985161
+## 44  -1179.09091  -78.527670         44.72172      -0.01985161
+## 45    -79.09091  -41.098698        234.60874      -0.01985161
+## 46   -629.09091    3.129048        695.43798      -0.01985161
+## 47  -1079.09091 -507.948710       -317.63455      -0.01985161
+## 48   -579.09091 -363.381228       -321.63723       0.23014839
+## 49   4920.90909  406.679410        596.18099      -0.01985161
+## 50   -479.09091 -100.287534        130.82410      -0.01985161
+## 51    420.90909  287.868323        215.60449      -0.01985161
+## 52  -1579.09091  136.129246        -54.04920      -0.01985161
+## 53  -1079.09091 -258.266496       -107.47971       0.14681539
+## 54  -1579.09091  500.436129        -26.19276      -0.01985161
+## 55    420.90909   58.932063        728.47384      -0.01985161
+## 56    620.90909 -361.821838        -93.39225      -0.01985161
+## 57  -1079.09091  -48.238182         39.08578      -0.01985161
+## 58   -779.09091  -35.255607        135.73819      -0.01985161
+## 59   -179.09091 -194.433837       -174.13660      -0.01985161
+## 60  -1079.09091  283.020020        -39.22129      -0.01985161
+## 61  -1179.09091  219.013578       -173.14676      -0.01985161
+## 62   -979.09091 -230.262625        165.42800      -0.01985161
+##  [ reached &#39;max&#39; / getOption(&quot;max.print&quot;) -- omitted 1973 rows ]</code></pre>
+<p>##Data reduction</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>data_standardise <span class="ot">&lt;-</span> <span class="fu">scale</span>(data, <span class="at">center =</span> <span class="cn">TRUE</span>, <span class="at">scale =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>data_standardise</span></code></pre></div>
+<pre><code>##               BALANCE BALANCE_FREQUENCY     PURCHASES ONEOFF_PURCHASES
+##    [1,] -1.164840e+00        -1.7752961 -0.5284450742    -0.5332023057
+##    [2,] -2.453071e-01         0.3579945 -0.7810196136    -0.4606229307
+##    [3,]  9.454467e-01         0.3579945  0.5556532009    -0.5332023057
+##    [4,] -1.186224e-02         0.3579945  1.9085175067     2.4674558692
+##    [5,]  2.068943e+00         0.3579945 -0.8319162462    -0.5332023057
+##    [6,] -1.012281e+00         0.3579945  0.4392271538    -0.5332023057
+##    [7,]  6.996044e-01         0.3579945 -0.5074502132    -0.0705087898
+##    [8,] -1.064467e+00         0.3579945 -0.0898433424    -0.5332023057
+##    [9,] -1.187138e+00         0.3579945 -0.5138122923    -0.5332023057
+##   [10,]  7.474073e-01         0.3579945 -0.8319162462    -0.5332023057
+##   [11,]  3.974885e-01         0.3579945 -0.8319162462    -0.5332023057
+##   [12,] -1.907427e-01         0.3579945  0.7824613201     1.7689247465
+##   [13,]  6.400794e-01         0.3579945 -0.8319162462    -0.5332023057
+##   [14,]  6.283755e-01         0.3579945 -0.6213314287    -0.2329051415
+##   [15,]  8.678030e-01         0.3579945  0.4797217871     0.9420188542
+##   [16,]  6.526552e-01         0.3579945 -0.8319162462    -0.5332023057
+##   [17,] -5.281043e-01         0.3579945  0.1860164064    -0.5332023057
+##   [18,] -1.192709e+00        -0.7086508 -0.0530387150    -0.3508012638
+##   [19,]  3.565802e+00         0.3579945 -0.6887694669    -0.3290728134
+##   [20,]  3.510080e-01         0.3579945 -0.6867017912    -0.3261242763
+##   [21,]  1.676858e+00         0.3579945  1.7383637018     3.1320561341
+##   [22,] -7.295189e-01         0.3579945  2.1634778258    -0.5332023057
+##   [23,]  2.624044e-01         0.3579945  0.5158902067     0.2726102057
+##   [24,]  1.938564e+00         0.3579945 -0.8319162462    -0.5332023057
+##   [25,]  3.812667e+00         0.3579945  5.3943324446     4.3536577404
+##   [26,] -1.184509e+00        -3.9085866 -0.0347477376    -0.5332023057
+##   [27,] -9.396861e-01         0.3579945  0.5677411512    -0.5332023057
+##   [28,] -3.773887e-01         0.3579945  2.0242119148     2.7080111354
+##   [29,] -9.211362e-02         0.3579945 -0.2050605946     0.1411508127
+##   [30,] -3.088401e-01        -1.7752961 -0.8319162462    -0.5332023057
+##   [31,]  2.405864e+00         0.3579945  2.4286492819     4.1164139082
+##   [32,]  2.535871e-02         0.3579945  0.1064904180     0.8049799217
+##   [33,]  2.027033e+00         0.3579945 -0.8319162462    -0.5332023057
+##   [34,] -1.815580e-01         0.3579945  1.2300972041    -0.0115380476
+##   [35,]  6.925884e-01         0.3579945  0.9405271748     1.8512116130
+##   [36,]  6.907082e-01         0.3579945 -0.8319162462    -0.5332023057
+##   [37,]  8.061953e-01         0.3579945 -0.3618222231    -0.5332023057
+##   [38,] -1.779899e-01         0.3579945  0.8112179176     0.1883727686
+##   [39,] -6.947971e-02         0.3579945  0.1588185184     0.8796005917
+##   [40,] -1.167545e+00        -2.8419413  0.0600472407     0.7387512420
+##   [41,] -5.426211e-01        -0.7086508  0.4587905470     0.8900338768
+##   [42,] -1.123710e+00        -2.8419413  0.8858451052    -0.5332023057
+##   [43,] -1.179565e+00         0.3579945 -0.5138122923    -0.0795812117
+##   [44,]  5.451270e-02         0.3579945  2.3195396257     1.6532513676
+##   [45,]  1.426281e+00         0.3579945 -0.6867017912    -0.3261242763
+##   [46,]  1.005892e+00         0.3579945  0.1258947591    -0.1566967977
+##   [47,] -1.205691e+00         0.3579945 -0.5785146365    -0.5332023057
+##   [48,] -1.190163e+00         0.3579945 -0.2175302696    -0.5332023057
+##   [49,]  3.409621e+00         0.3579945 -0.3522154837     0.1508583041
+##   [50,]  1.003960e+00         0.3579945 -0.4292920717     0.0409459130
+##   [51,]  1.652258e+00         0.3579945 -0.8319162462    -0.5332023057
+##   [52,] -1.158933e-01         0.3579945 -0.8319162462    -0.5332023057
+##   [53,] -1.165801e+00         0.3579945 -0.1161823498    -0.5332023057
+##   [54,] -2.063438e-01         0.3579945 -0.8317571943    -0.5329754952
+##   [55,]  1.946295e+00         0.3579945 -0.8319162462    -0.5332023057
+##   [56,] -1.384550e-01         0.3579945 -0.1418215285     0.4508832957
+##   [57,]  2.719269e-01         0.3579945  0.3187611864     1.1076812778
+##   [58,]  6.135721e-01         0.3579945 -0.8319162462    -0.5332023057
+##   [59,] -5.007476e-01         0.3579945  2.2974950216     2.2056257738
+##   [60,]  2.794888e-01         0.3579945 -0.8319162462    -0.5332023057
+##   [61,] -9.277128e-01        -0.7086508 -0.2564343831     0.2874436155
+##   [62,]  5.961520e-01         0.3579945 -0.8319162462    -0.5332023057
+##         INSTALLMENTS_PURCHASES  CASH_ADVANCE PURCHASES_FREQUENCY ONEOFF_PURCHASES_FREQUENCY
+##    [1,]          -0.2254552080 -0.6079302483          -0.4912412                 -0.6494267
+##    [2,]          -0.6665288628 -0.6079302483          -0.7214774                  0.1001926
+##    [3,]           1.3502041376 -0.6079302483           1.8111020                 -0.6494267
+##    [4,]           0.2581538517 -0.6079302483          -0.0307742                  0.1001926
+##    [5,]          -0.6665288628  0.0226334493          -0.9517109                 -0.6494267
+##    [6,]           1.1809872008 -0.6079302483           1.8111020                 -0.6494267
+##    [7,]          -0.6665288628 -0.1627674711          -0.4912412                  0.8498209
+##    [8,]           0.4120210554 -0.6079302483           1.8111020                 -0.6494267
+##    [9,]          -0.2041875055 -0.6079302483           0.1994621                 -0.6494267
+##   [10,]          -0.6665288628 -0.4274502868          -0.9517109                 -0.6494267
+##   [11,]          -0.6665288628  2.0858539312          -0.9517109                 -0.6494267
+##   [12,]          -0.6665288628  0.6558778255          -0.4912412                  0.8498209
+##   [13,]          -0.6665288628 -0.0236431970          -0.9517109                 -0.6494267
+##   [14,]          -0.6665288628 -0.6079302483          -0.7214774                  0.1001926
+##   [15,]          -0.2637370723 -0.6079302483           0.6599290                  2.3490594
+##   [16,]          -0.6665288628  0.0882643872          -0.9517109                 -0.6494267
+##   [17,]           0.8129634804 -0.6079302483           1.1203988                 -0.6494267
+##   [18,]           0.2796064907 -0.6079302483           0.8901653                  0.8498209
+##   [19,]          -0.6665288628 -0.4184072367          -0.7214774                  0.1001926
+##   [20,]          -0.6665288628  0.2932624709          -0.7214774                  0.1001926
+##   [21,]          -0.6665288628  1.1372579502          -0.2610077                  1.5994401
+##   [22,]           3.6870622937 -0.6079302483           1.8111020                 -0.6494267
+##   [23,]           0.4711082809  0.1418832884           0.8901653                  0.8498209
+##   [24,]          -0.6665288628  0.3175639523          -0.9517109                 -0.6494267
+##   [25,]           3.4020750811 -0.6079302483           1.3506323                  0.8498209
+##   [26,]           0.4920985785 -0.6079302483           0.6599290                 -0.6494267
+##   [27,]           1.3677731091 -0.6079302483           1.5808685                 -0.6494267
+##   [28,]           0.1811277816  0.4580091575           1.5808685                  2.3490594
+##   [29,]          -0.4427556459 -0.6079302483          -0.0307742                  1.5994401
+##   [30,]          -0.6665288628  1.7686104865          -0.9517109                 -0.6494267
+##   [31,]          -0.6665288628 -0.6079302483          -0.7214774                  0.1001926
+##   [32,]          -0.6665288628 -0.4377858064          -0.7214774                  0.1001926
+##   [33,]          -0.6665288628  0.1733233582          -0.9517109                 -0.6494267
+##   [34,]           1.7987677224 -0.6079302483           1.8111020                  0.1001926
+##   [35,]          -0.5206601646 -0.6079302483          -0.2610077                  0.1001926
+##   [36,]          -0.6665288628 -0.2338641385          -0.9517109                 -0.6494267
+##   [37,]           0.0167191950  2.4049493924          -0.4912412                 -0.6494267
+##   [38,]           0.9862027870 -0.6079302483           1.8111020                  2.3490594
+##   [39,]          -0.6665288628  1.1301715888          -0.0307742                  2.3490594
+##   [40,]          -0.6665288628 -0.6079302483          -0.2610077                  1.5994401
+##   [41,]          -0.2411748141  1.2914289018           0.4296956                  0.8498209
+##   [42,]           1.8301144664 -0.6079302483          -0.2610077                 -0.6494267
+##   [43,]          -0.6665288628 -0.6079302483          -0.7214774                  0.1001926
+##   [44,]           1.6854016216 -0.6079302483           1.1203988                  1.5994401
+##   [45,]          -0.6665288628 -0.6079302483          -0.7214774                  0.1001926
+##   [46,]           0.3418376374 -0.6079302483           0.6599290                  0.8498209
+##   [47,]          -0.2982277376 -0.6079302483           1.8111020                 -0.6494267
+##   [48,]           0.2264372346 -0.6079302483           0.1994621                 -0.6494267
+##   [49,]          -0.6665288628  2.4087839719          -0.4912412                  0.8498209
+##   [50,]          -0.6665288628 -0.2785872126          -0.2610077                  1.5994401
+##   [51,]          -0.6665288628  0.4233998965          -0.9517109                 -0.6494267
+##   [52,]          -0.6665288628  0.1247471845          -0.9517109                 -0.6494267
+##   [53,]           0.3737391910 -0.6079302483           1.8111020                 -0.6494267
+##   [54,]          -0.6665288628  2.4841205428          -0.7214774                  0.1001926
+##   [55,]          -0.6665288628 -0.3494924862          -0.9517109                 -0.6494267
+##   [56,]          -0.6665288628  1.2320588176          -0.4912412                  0.8498209
+##   [57,]          -0.6665288628 -0.2466830356          -0.4912412                  0.8498209
+##   [58,]          -0.6665288628 -0.5415999040          -0.9517109                 -0.6494267
+##   [59,]           1.0903682948 -0.6079302483           0.8901653                  3.0986877
+##   [60,]          -0.6665288628  0.2546660928          -0.9517109                 -0.6494267
+##   [61,]          -0.6665288628 -0.6079302483          -0.4912412                  0.8498209
+##   [62,]          -0.6665288628 -0.2935112634          -0.9517109                 -0.6494267
+##         PURCHASES_INSTALLMENTS_FREQUENCY CASH_ADVANCE_FREQUENCY CASH_ADVANCE_TRX
+##    [1,]                      -0.53241259            -0.80746785       -0.7750409
+##    [2,]                      -0.76036406            -0.80746785       -0.7750409
+##    [3,]                       1.97506456            -0.80746785       -0.7750409
+##    [4,]                      -0.07650691            -0.80746785       -0.7750409
+##    [5,]                      -0.76036406            -0.06829058       -0.2555389
+##    [6,]                       1.97506456            -0.80746785       -0.7750409
+##    [7,]                      -0.76036406             1.41007283        1.8224694
+##    [8,]                       1.97506456            -0.80746785       -0.7750409
+##    [9,]                       0.37939878            -0.80746785       -0.7750409
+##   [10,]                      -0.76036406            -0.06829058       -0.2555389
+##   [11,]                      -0.76036406            -0.06829058       -0.2555389
+##   [12,]                      -0.76036406            -0.06829058        0.2639632
+##   [13,]                      -0.76036406             1.41007283        0.7834653
+##   [14,]                      -0.76036406            -0.80746785       -0.7750409
+##   [15,]                      -0.30445838            -0.80746785       -0.7750409
+##   [16,]                      -0.76036406             2.88843625        2.3419714
+##   [17,]                       1.06325593            -0.80746785       -0.7750409
+##   [18,]                       0.83530172            -0.80746785       -0.7750409
+##   [19,]                      -0.76036406            -0.06829058       -0.2555389
+##   [20,]                      -0.76036406            -0.06829058       -0.2555389
+##   [21,]                      -0.76036406             2.14925010        2.3419714
+##   [22,]                       1.97506456            -0.80746785       -0.7750409
+##   [23,]                       0.60735025            -0.06829058        0.2639632
+##   [24,]                      -0.76036406             2.14925010        1.3029673
+##   [25,]                       0.83530172            -0.80746785       -0.7750409
+##   [26,]                       0.60735025            -0.80746785       -0.7750409
+##   [27,]                       1.74711309            -0.80746785       -0.7750409
+##   [28,]                       1.74711309             1.41007283        0.7834653
+##   [29,]                      -0.30445838            -0.80746785       -0.7750409
+##   [30,]                      -0.76036406             0.67089556        0.7834653
+##   [31,]                      -0.76036406            -0.80746785       -0.7750409
+##   [32,]                      -0.76036406            -0.06829058       -0.2555389
+##   [33,]                      -0.76036406             2.88843625        1.8224694
+##   [34,]                       1.97506456            -0.80746785       -0.7750409
+##   [35,]                      -0.30445838            -0.80746785       -0.7750409
+##   [36,]                      -0.76036406             0.67089556        0.2639632
+##   [37,]                      -0.30445838             1.41007283        1.3029673
+##   [38,]                       1.74711309            -0.80746785       -0.7750409
+##   [39,]                      -0.76036406            -0.06829058       -0.2555389
+##   [40,]                      -0.76036406            -0.80746785       -0.7750409
+##   [41,]                       0.37939878             2.14925010        2.3419714
+##   [42,]                      -0.30445838            -0.80746785       -0.7750409
+##   [43,]                      -0.76036406            -0.80746785       -0.7750409
+##   [44,]                       0.83530172            -0.80746785       -0.7750409
+##   [45,]                      -0.76036406            -0.80746785       -0.7750409
+##   [46,]                       0.15144457            -0.80746785       -0.7750409
+##   [47,]                       1.97506456            -0.80746785       -0.7750409
+##   [48,]                       0.37939878            -0.80746785       -0.7750409
+##   [49,]                      -0.76036406             2.88843625        1.8224694
+##   [50,]                      -0.76036406            -0.06829058       -0.2555389
+##   [51,]                      -0.76036406            -0.06829058        0.2639632
+##   [52,]                      -0.76036406             2.14925010        1.8224694
+##   [53,]                       1.97506456            -0.80746785       -0.7750409
+##   [54,]                      -0.76036406             2.14925010        2.8614735
+##   [55,]                      -0.76036406             0.67089556        0.2639632
+##   [56,]                      -0.76036406             0.67089556        1.8224694
+##   [57,]                      -0.76036406            -0.06829058       -0.2555389
+##   [58,]                      -0.76036406            -0.06829058       -0.2555389
+##   [59,]                      -0.07650691            -0.80746785       -0.7750409
+##   [60,]                      -0.76036406             1.41007283        0.7834653
+##   [61,]                      -0.76036406            -0.80746785       -0.7750409
+##   [62,]                      -0.76036406             0.67089556        0.2639632
+##         PURCHASES_TRX CREDIT_LIMIT     PAYMENTS MINIMUM_PAYMENTS PRC_FULL_PAYMENT
+##    [1,]   -0.55789801  -0.92455724 -1.014277575     -0.971639673       -0.3886979
+##    [2,]   -0.70429677  -0.80745730  0.250858861     -0.569047585       -0.3886979
+##    [3,]    0.90608967  -0.16340764  0.252797769      0.529357307       -0.3886979
+##    [4,]   -0.11870170   2.58844090  0.277258457     -0.312183864       -0.3886979
+##    [5,]   -0.85069554   0.24644214  0.588859987      2.280459162       -0.3886979
+##    [6,]    0.90608967   0.24644214 -0.978425940     -0.881792861       -0.3886979
+##    [7,]   -0.55789801  -0.51470745  0.813279192      2.208646499       -0.3886979
+##    [8,]    0.90608967  -0.92455724 -0.998423620     -0.875126616       -0.3886979
+##    [9,]   -0.11870170   2.52989093 -1.123218691     -0.894492592       -0.3886979
+##   [10,]   -0.85069554  -0.45615748 -0.616847246      0.921448307       -0.3886979
+##   [11,]   -0.85069554  -0.63180739 -0.545712353     -0.276274092       -0.3886979
+##   [12,]   -0.41149924   0.83194183  0.010676471     -0.409751026        1.2429769
+##   [13,]   -0.85069554   0.53919199  0.286674544      0.718444218       -0.3886979
+##   [14,]   -0.70429677  -0.57325742 -0.652466526      1.696359960       -0.3886979
+##   [15,]    0.75969090  -0.45615748  0.514002163      1.928435233       -0.3886979
+##   [16,]   -0.85069554  -0.04630770 -0.116344143     -0.155705897       -0.3886979
+##   [17,]    0.32049460  -0.63180739  2.270095331     -0.777853772       -0.3886979
+##   [18,]    1.05248844   1.41744152 -0.600116511     -1.040418842        3.1713306
+##   [19,]   -0.70429677   1.12469167  1.300890240      2.200073394       -0.3886979
+##   [20,]   -0.70429677  -0.45615748 -0.379659750     -0.309900091       -0.3886979
+##   [21,]   -0.26510047   0.83194183 -0.135673056      2.421995918       -0.3886979
+##   [22,]    0.90608967  -0.04630770  1.364460075     -0.829767617        1.2429769
+##   [23,]    0.61329213  -0.33905755 -0.018038904      0.400610028       -0.3886979
+##   [24,]   -0.85069554   0.24644214  0.925421292      1.206859930       -0.3886979
+##   [25,]    1.93088104   1.41744152  1.116402338      2.649341472       -0.3886979
+##   [26,]    0.17409583   0.24644214 -0.701105915     -0.841157661       -0.3886979
+##   [27,]    2.37007735   0.83194183 -0.078925442     -0.797338781       -0.3886979
+##   [28,]    1.78448228  -0.80745730  1.031455003     -0.799505670       -0.3886979
+##   [29,]   -0.11870170  -0.92455724 -0.243305235      0.442745340       -0.3886979
+##   [30,]   -0.85069554   2.88119074  2.609644562     -0.843728425       -0.3886979
+##   [31,]   -0.55789801   2.88119074  0.305335197      1.629314433       -0.3886979
+##   [32,]   -0.55789801  -0.80745730 -0.383465139     -0.117640739       -0.3886979
+##   [33,]   -0.85069554   0.24644214  0.517656192      1.255009556       -0.3886979
+##   [34,]    3.10207118  -0.80745730  1.399231034     -0.708594654       -0.3886979
+##   [35,]   -0.11870170   0.83194183 -0.427788959      0.850462327       -0.3886979
+##   [36,]   -0.85069554  -0.45615748 -0.300742035      0.058112157       -0.3886979
+##   [37,]   -0.55789801   2.00294121  1.598815094     -0.072681213       -0.3886979
+##   [38,]    3.54126749  -0.98310720 -0.010873559      1.148306306       -0.3886979
+##   [39,]    1.34528597  -0.63180739 -0.813249221     -0.410322291       -0.3886979
+##   [40,]   -0.41149924   2.09076616 -0.874655118     -1.291743571        1.3913163
+##   [41,]    0.90608967  -0.33905755  1.768123016     -0.308018508       -0.3886979
+##   [42,]   -0.41149924   0.83194183 -0.092596105     -1.319045903       -0.3886979
+##   [43,]   -0.70429677   0.83194183 -1.216135738     -1.104148575       -0.3886979
+##   [44,]    1.05248844  -0.69035736 -0.208481434      0.171014088       -0.3886979
+##   [45,]   -0.70429677  -0.04630770 -0.109112055      0.897134497       -0.3886979
+##   [46,]    0.61329213  -0.36833253  0.008307244      2.659327228       -0.3886979
+##   [47,]    0.90608967  -0.63180739 -1.348542185     -1.214621932       -0.3886979
+##   [48,]   -0.11870170  -0.33905755 -0.964733063     -1.229928018        4.5063462
+##   [49,]   -0.55789801   2.88119074  1.079684485      2.279772455       -0.3886979
+##   [50,]   -0.26510047  -0.28050758 -0.266251232      0.500266154       -0.3886979
+##   [51,]   -0.85069554   0.24644214  0.764255466      0.824463010       -0.3886979
+##   [52,]   -0.85069554  -0.92455724  0.361406630     -0.206682007       -0.3886979
+##   [53,]    0.90608967  -0.63180739 -0.685666206     -0.410998142        2.8746713
+##   [54,]   -0.70429677  -0.92455724  1.328597196     -0.100160074       -0.3886979
+##   [55,]   -0.85069554   0.24644214  0.156457477      2.785655069       -0.3886979
+##   [56,]   -0.41149924   0.36354208 -0.960593072     -0.357128246       -0.3886979
+##   [57,]   -0.55789801  -0.63180739 -0.128066519      0.149462489       -0.3886979
+##   [58,]   -0.85069554  -0.45615748 -0.093599357      0.519057463       -0.3886979
+##   [59,]    1.34528597  -0.10485767 -0.516198242     -0.665891453       -0.3886979
+##   [60,]   -0.85069554  -0.63180739  0.751383810     -0.149980667       -0.3886979
+##   [61,]    0.02769706  -0.69035736  0.581454474     -0.662106351       -0.3886979
+##   [62,]   -0.85069554  -0.57325742 -0.611319326      0.632590110       -0.3886979
+##  [ reached &#39;max&#39; / getOption(&quot;max.print&quot;) -- omitted 1973 rows ]
+## attr(,&quot;scaled:center&quot;)
+##                          BALANCE                BALANCE_FREQUENCY 
+##                     1.024948e+03                     9.694885e-01 
+##                        PURCHASES                 ONEOFF_PURCHASES 
+##                     2.615234e+02                     1.175435e+02 
+##           INSTALLMENTS_PURCHASES                     CASH_ADVANCE 
+##                     1.441638e+02                     3.343629e+02 
+##              PURCHASES_FREQUENCY       ONEOFF_PURCHASES_FREQUENCY 
+##                     3.444717e-01                     7.219488e-02 
+## PURCHASES_INSTALLMENTS_FREQUENCY           CASH_ADVANCE_FREQUENCY 
+##                     2.779689e-01                     9.103191e-02 
+##                 CASH_ADVANCE_TRX                    PURCHASES_TRX 
+##                     1.491892e+00                     5.810811e+00 
+##                     CREDIT_LIMIT                         PAYMENTS 
+##                     2.579091e+03                     5.838450e+02 
+##                 MINIMUM_PAYMENTS                 PRC_FULL_PAYMENT 
+##                     3.936023e+02                     1.985161e-02 
+## attr(,&quot;scaled:scale&quot;)
+##                          BALANCE                BALANCE_FREQUENCY 
+##                     8.447913e+02                     8.522890e-02 
+##                        PURCHASES                 ONEOFF_PURCHASES 
+##                     3.143626e+02                     2.204483e+02 
+##           INSTALLMENTS_PURCHASES                     CASH_ADVANCE 
+##                     2.162904e+02                     5.500022e+02 
+##              PURCHASES_FREQUENCY       ONEOFF_PURCHASES_FREQUENCY 
+##                     3.619499e-01                     1.111671e-01 
+## PURCHASES_INSTALLMENTS_FREQUENCY           CASH_ADVANCE_FREQUENCY 
+##                     3.655734e-01                     1.127375e-01 
+##                 CASH_ADVANCE_TRX                    PURCHASES_TRX 
+##                     1.924920e+00                     6.830659e+00 
+##                     CREDIT_LIMIT                         PAYMENTS 
+##                     1.707943e+03                     3.766651e+02 
+##                 MINIMUM_PAYMENTS                 PRC_FULL_PAYMENT 
+##                     2.615090e+02                     5.107206e-02</code></pre>
+<h2 id="saving-data">Saving Data</h2>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="fu">write.csv</span>(data_standardise, <span class="st">&quot;C:</span><span class="sc">\\</span><span class="st">Users</span><span class="sc">\\</span><span class="st">EL OUARDI</span><span class="sc">\\</span><span class="st">Desktop</span><span class="sc">\\</span><span class="st">projet statistique</span><span class="sc">\\</span><span class="st">ACP-Analyse-Cartes-Credit</span><span class="sc">\\</span><span class="st">data</span><span class="sc">\\</span><span class="st">processed</span><span class="sc">\\</span><span class="st">credit_card_clean_standardised.csv&quot;</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+
+</body>
+</html>

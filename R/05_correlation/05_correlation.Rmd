@@ -1,6 +1,11 @@
 ---
 title: "05_correlation"
-output: html_document
+output:
+  html_document:
+    toc: true
+  github_document:
+    toc: true
+always_allow_html: true
 date: "2026-01-23"
 ---
 
