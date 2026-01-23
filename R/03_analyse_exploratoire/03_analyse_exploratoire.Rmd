@@ -11,6 +11,8 @@ output:
 # Pour les graphiques
 suppressWarnings(suppressMessages(install.packages("ggplot2")))
 suppressWarnings(suppressMessages(install.packages("reshape2")))
+suppressWarnings(suppressMessages(install.packages("e1071")))
+library(e1071)
 library(ggplot2)
 library(reshape2)
 
@@ -27,30 +29,35 @@ print(paste("Colonnes numériques trouvées:", paste(num_cols, collapse=", ")))
 ```
 
 ```{r statistiques_descriptives}
-# Moyenne
-sapply(data[, num_cols], mean, na.rm = TRUE)
 
-# Médiane
-sapply(data[, num_cols], median, na.rm = TRUE)
-
-# Mode (fonction personnalisée, car R n'a pas de mode intégré)
+# Fonction pour le mode
 get_mode <- function(v) {
   uniqv <- unique(v)
   uniqv[which.max(tabulate(match(v, uniqv)))]
 }
-sapply(data[, num_cols], get_mode)
 
-# Écart-type
-sapply(data[, num_cols], sd, na.rm = TRUE)
+# Calcul des statistiques complètes pour toutes les colonnes numériques
+stats_completes <- data.frame(
+  Variable = num_cols,
+  Moyenne = sapply(data[, num_cols], mean, na.rm = TRUE),
+  Mediane = sapply(data[, num_cols], median, na.rm = TRUE),
+  Mode = sapply(data[, num_cols], get_mode),
+  Ecart_type = sapply(data[, num_cols], sd, na.rm = TRUE),
+  Variance = sapply(data[, num_cols], var, na.rm = TRUE),
+  Min = sapply(data[, num_cols], min, na.rm = TRUE),
+  Max = sapply(data[, num_cols], max, na.rm = TRUE),
+  Skewness = sapply(data[, num_cols], function(x) skewness(x, na.rm = TRUE)),
+  stringsAsFactors = FALSE
+)
 
-# Variance
-sapply(data[, num_cols], var, na.rm = TRUE)
+# Ajouter une colonne pour l'interprétation de l'asymétrie
+stats_completes$Asymetrie <- ifelse(
+  stats_completes$Skewness > 0, "Droite",
+  ifelse(stats_completes$Skewness < 0, "Gauche", "Symétrique")
+)
 
-# Minimum
-sapply(data[, num_cols], min, na.rm = TRUE)
-
-# Maximum
-sapply(data[, num_cols], max, na.rm = TRUE)
+# Afficher le tableau
+print(stats_completes)
 
 # Quartiles (25%, 50%, 75%)
 sapply(data[, num_cols], function(x) quantile(x, probs = c(0.25, 0.5, 0.75), na.rm = TRUE))
