@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 start with loading data
 
 ```{r}
-  data <- read.csv("C:\\Users\\EL OUARDI\\Desktop\\projet statistique\\ACP-Analyse-Cartes-Credit\\data\\raw\\CC GENERAL (1).csv")
+  data <- read.csv("../../data/raw/CC GENERAL (1).csv")
 head(data)
 
 ```
@@ -112,5 +112,5 @@ data$TENURE<-NULL
 ##saving data
 
 ```{r}
-write.csv(data, "C:\\Users\\EL OUARDI\\Desktop\\projet statistique\\ACP-Analyse-Cartes-Credit\\data\\processed\\credit_card_clean.csv", row.names = FALSE)
+write.csv(data, "../../ACP-Analyse-Cartes-Credit/data/processed/credit_card_clean.csv", row.names = FALSE)
 ```

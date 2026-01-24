@@ -1,0 +1,70 @@
+---
+title: "12_segmentation_clustering"
+output: html_document
+date: "2026-01-23"
+---
+
+## Loading data
+
+start with loading data
+
+```{r}
+  data <- read.csv("../../data/processed/data_after_ACP.csv")
+head(data)
+
+```
+
+## choosing the number of Clusters
+
+```{r}
+# Utilisation des scores de l'ACP (data_segmentation créée précédemment)
+library(factoextra)
+
+fviz_nbclust(data, kmeans, method = "wss") +
+  geom_vline(xintercept = 3, linetype = 2) + # Exemple si le coude est à 3
+  labs(title = "Méthode du Coude pour choisir le nombre de clusters")
+```
+
+## applying clutering
+
+```{r}
+# On lance le K-means
+set.seed(123) # Pour avoir des résultats reproductibles
+km_res <- kmeans(data, centers = 3, nstart = 25)
+
+# On ajoute le numéro du cluster à nos données
+data$cluster <- as.factor(km_res$cluster)
+head(data)
+```
+
+## displying Clusters
+
+```{r}
+fviz_cluster(km_res, data = data[, 1:2],
+             ellipse.type = "convex", 
+             palette = "jco",
+             ggtheme = theme_minimal())
+
+```
+
+## combining the original data and clusters data
+
+```{r}
+raw_data <- read.csv("../../data/processed/credit_card_clean.csv")
+head(data)
+```
+
+## data for the interpretation
+
+```{r}
+# 1. On ajoute les résultats du clustering au dataset d'origine (celui avec les 15 variables)
+donnees_finales <- cbind(raw_data, Cluster = km_res$cluster)
+
+# 2. On calcule la moyenne de chaque variable par cluster
+profil_clusters <- aggregate(. ~ Cluster, data = donnees_finales, FUN = mean)
+
+# 3. On affiche le résultat (transposé pour mieux lire)# 3. On affiche lmedian()e résultat (transposé pour mieux lire)
+print(t(profil_clusters))
+
+write.csv(t(profil_clusters), "../../data/processed/data_pour_Interprétation_des_profils_obtenus.csv", row.names = FALSE)
+```

@@ -4,6 +4,11 @@ output: html_document
 date: "2026-01-23"
 ---
 
+##load data_standardise
+```{r}
+data_standardise<-read.csv("../../data/processed/credit_card_clean_standardised.csv")
+```
+
 ### Diagonalisation de la matrice de corrélation
 
 ```{r}
@@ -49,10 +54,20 @@ fviz_pca_var(res.pca,
        x = "Dimension 1", y = "Dimension 2")
 ```
 
+
+```{r}
+# Extraire les coordonnées des individus sur les axes factoriels
+# res.pca$ind$coord contient les scores
+donnees_reduites <- as.data.frame(res.pca$ind$coord)
+
+# Vérifier le nouveau dataset
+print(donnees_reduites)
+```
+
 ## matrice de correlation entre nos variables et les nouvelles axes
 
 ```{r}
-write.csv(res.pca$var$coord, "C:\\Users\\EL OUARDI\\Desktop\\projet statistique\\ACP-Analyse-Cartes-Credit\\data\\processed\\data_after_ACP.csv", row.names = FALSE)
+write.csv(donnees_reduites, "../../data/processed/data_after_ACP.csv", row.names = FALSE)
 print(res.pca$var$coord)
 ```
 
@@ -81,4 +96,32 @@ colnames(scores_ind) <- c("Score_Depense", "Score_Tresorerie")
 
 # 3. Aperçu des scores pour les 5 premiers clients
 head(scores_ind)
+```
+
+## Contributions des variables
+```{r}
+# 1. Visualiser les contributions sur l'Axe 1
+# fviz_contrib(res.pca, choice = "var", axes = 1, top = 10)
+fviz_contrib(res.pca, choice = "var", axes = 2, top = 10)
+```
+
+## Corrélations variables–composantes
+
+```{r}
+library(corrplot)
+# res.pca est le résultat de ton ACP : PCA(data)
+matrice_corr <- res.pca$var$cor
+
+# Afficher les corrélations pour les 5 premiers axes
+corrplot(matrice_corr, 
+         method = "color",       # Remplit les carrés avec de la couleur
+         type = "full",          # Affiche la matrice complète
+         addCoef.col = "black",  # Affiche les coefficients de corrélation en noir
+         tl.col = "black",       # Couleur des étiquettes (noms des variables)
+         tl.srt = 45,            # Incline les noms des variables à 45 degrés
+         diag = TRUE,            # Affiche la diagonale (toujours égale à 1)
+         number.cex = 0.7,       # Taille des chiffres à l'intérieur
+         col = colorRampPalette(c("blue", "white", "red"))(200), # Dégradé bleu-blanc-rouge
+         title = "Corrélation entre les variables",
+         mar = c(0,0,1,0))       # Ajuste les marges pour que le titre s'affiche
 ```
