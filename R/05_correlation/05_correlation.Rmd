@@ -43,12 +43,24 @@ library(webshot2)
 df_corr <- as.data.frame(round(matrice_corr, 2))
 
 # 2. On crée le tableau avec un dégradé de bleu (style Pandas/Seaborn)
-df_corr |>
-  kbl() |>
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = F) |>
-  column_spec(1, bold = T, border_right = T) |>
-  column_spec(2:ncol(df_corr)+1, 
-              background = spec_color(as.matrix(df_corr), end = 0.9, option = "D", direction = -1))
+# Installation si nécessaire
+# install.packages("ggcorrplot")
+library(ggcorrplot)
+# install.packages("ggcorrplot")
+library(ggplot2)
+# 1. Calculer la matrice de corrélation
+corr_mat <- cor(df_corr, use = "complete.obs")
+
+# 2. Générer le graphique
+ggcorrplot(corr_mat, 
+           hc.order = FALSE,           # Garder l'ordre original des variables
+           type = "full",              # Matrice complète
+           lab = TRUE,                 # Afficher les coefficients (les chiffres)
+           lab_size = 3,               # Taille des chiffres
+           colors = c("#4444FF", "white", "#FF0000"), # Bleu, Blanc, Rouge
+           title = "Corrélation entre les outliers des variables",
+           ggtheme = theme_minimal()) +
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1)) # Incliner le texte
 
 save_kable(df_corr, file = "../../R/images/matrice_correlation.png")
 ```

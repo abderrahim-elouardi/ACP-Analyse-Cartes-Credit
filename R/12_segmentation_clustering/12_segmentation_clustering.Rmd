@@ -68,3 +68,8 @@ print(t(profil_clusters))
 
 write.csv(t(profil_clusters), "../../data/processed/data_pour_Interprétation_des_profils_obtenus.csv", row.names = FALSE)
 ```
+
+```{r}
+write.csv(donnees_finales, "../../data/processed/clustered_data", row.names = FALSE)
+print(donnees_finales)
+```

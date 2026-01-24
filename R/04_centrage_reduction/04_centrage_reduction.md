@@ -1,15 +1,9 @@
-04_centrage_reduction
-================
-2026-01-23
-
 ## Loading data
 
 start with loading data
 
-``` r
-  data <- read.csv("C:\\Users\\EL OUARDI\\Desktop\\projet statistique\\ACP-Analyse-Cartes-Credit\\data\\processed\\credit_card_clean.csv")
-head(data)
-```
+      data <- read.csv("../../data/processed/credit_card_clean.csv")
+    head(data)
 
     ##      BALANCE BALANCE_FREQUENCY PURCHASES ONEOFF_PURCHASES INSTALLMENTS_PURCHASES
     ## 1   40.90075          0.818182     95.40             0.00                   95.4
@@ -42,9 +36,7 @@ head(data)
 
 ## Printing Data
 
-``` r
-data
-```
+    data
 
     ##        BALANCE BALANCE_FREQUENCY PURCHASES ONEOFF_PURCHASES INSTALLMENTS_PURCHASES
     ## 1    40.900749          0.818182     95.40             0.00                  95.40
@@ -302,15 +294,11 @@ data
 
 ## Centering Data
 
-``` r
-data_centred <- scale(data, center = TRUE, scale = FALSE)
-```
+    data_centred <- scale(data, center = TRUE, scale = FALSE)
 
-``` r
-# Convertir le résultat en dataframe (car scale() retourne une matrice)
-data_centred_frame <- as.data.frame(data_centred)
-data_centre_frame
-```
+    # Convertir le résultat en dataframe (car scale() retourne une matrice)
+    data_centred_frame <- as.data.frame(data_centred)
+    data_centred_frame
 
     ##        BALANCE BALANCE_FREQUENCY  PURCHASES ONEOFF_PURCHASES INSTALLMENTS_PURCHASES
     ## 1   -984.04684       -0.15130653 -166.12339      -117.543543             -48.763799
@@ -568,10 +556,8 @@ data_centre_frame
 
 \##Data reduction
 
-``` r
-data_standardise <- scale(data, center = TRUE, scale = TRUE)
-data_standardise
-```
+    data_standardise <- scale(data, center = TRUE, scale = TRUE)
+    data_standardise
 
     ##               BALANCE BALANCE_FREQUENCY     PURCHASES ONEOFF_PURCHASES
     ##    [1,] -1.164840e+00        -1.7752961 -0.5284450742    -0.5332023057
@@ -863,6 +849,4 @@ data_standardise
 
 ## Saving Data
 
-``` r
-write.csv(data_standardise, "C:\\Users\\EL OUARDI\\Desktop\\projet statistique\\ACP-Analyse-Cartes-Credit\\data\\processed\\credit_card_clean_standardised.csv", row.names = FALSE)
-```
+    write.csv(data_standardise, "../../data/processed/credit_card_clean_standardised.csv", row.names = FALSE)
