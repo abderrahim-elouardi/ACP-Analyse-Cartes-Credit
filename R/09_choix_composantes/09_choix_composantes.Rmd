@@ -8,21 +8,20 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-suppressWarnings(suppressMessages(library(ggplot2)))
+library(ggplot2)
+library(FactoMineR)
 
-data <- read.csv("../data/processed/credit_card_clean.csv")
-numeric_cols <- sapply(data, is.numeric)
-data_numeric <- data[, numeric_cols]
-data_scaled <- scale(data_numeric)
+# Charger les données standardisées (produites dans le script 04)
+data_standardise <- read.csv("../../data/processed/credit_card_clean_standardised.csv")
 
-if (any(is.na(data_scaled))) {
-  data_scaled <- na.omit(data_scaled)
-}
+# Calcul de l'ACP avec FactoMineR (PCA)
+res.pca <- PCA(data_standardise, scale.unit = TRUE, ncp = ncol(data_standardise), graph = FALSE)
 
-acp <- prcomp(data_numeric, scale = TRUE)
-eigenvalues <- acp$sdev^2
-variance_explained <- eigenvalues / sum(eigenvalues)
-cumulative_variance <- cumsum(variance_explained)
+# Extraire les valeurs propres et la variance expliquée (version simple)
+eig <- res.pca$eig
+eigenvalues <- eig[, 1]
+variance_explained <- eig[, 2] / 100
+cumulative_variance <- eig[, 3] / 100
 ```
 
 # 9.1 Critère de Kaiser

@@ -9,14 +9,14 @@ output:
 
 ```{r setup, include=FALSE}
 # Pour les graphiques
-suppressWarnings(suppressMessages(install.packages("ggplot2")))
-suppressWarnings(suppressMessages(install.packages("reshape2")))
-suppressWarnings(suppressMessages(install.packages("e1071")))
+install.packages("ggplot2")
+install.packages("reshape2")
+install.packages("e1071")
 library(e1071)
 library(ggplot2)
 library(reshape2)
 
-# data <- read.csv("../data/processed/credit_card_clean.csv")
+data <- read.csv("../../data/processed/credit_card_clean.csv")
 
 # Afficher les premières lignes et structure
 head(data)
