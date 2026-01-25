@@ -1,0 +1,159 @@
+---
+title: "9. Choix du nombre optimal de composantes principales"
+output: 
+  github_document:
+    toc: true
+    fig_width: 10
+    fig_height: 7
+---
+
+```{r setup, include=FALSE}
+library(ggplot2)
+library(FactoMineR)
+
+# Charger les données standardisées (produites dans le script 04)
+data_standardise <- read.csv("../../data/processed/credit_card_clean_standardised.csv")
+
+# Calcul de l'ACP avec FactoMineR (PCA)
+res.pca <- PCA(data_standardise, scale.unit = TRUE, ncp = ncol(data_standardise), graph = FALSE)
+
+# Extraire les valeurs propres et la variance expliquée (version simple)
+eig <- res.pca$eig
+eigenvalues <- eig[, 1]
+variance_explained <- eig[, 2] / 100
+cumulative_variance <- eig[, 3] / 100
+```
+
+# 9.1 Critère de Kaiser
+
+```{r kaiser_criterion}
+kaiser_cutoff <- 1
+n_components_kaiser <- sum(eigenvalues > kaiser_cutoff)
+
+cat("Critère de Kaiser (λ > 1):\n")
+cat("Composantes à conserver:", n_components_kaiser, "\n")
+cat("Variance expliquée:", round(cumulative_variance[n_components_kaiser] * 100, 2), "%\n\n")
+
+kaiser_table <- data.frame(
+  PC = paste("PC", 1:min(12, length(eigenvalues)), sep = ""),
+  Eigenvalue = round(eigenvalues[1:min(12, length(eigenvalues))], 4),
+  Keep = ifelse(eigenvalues[1:min(12, length(eigenvalues))] > kaiser_cutoff, "OUI", "NON")
+)
+print(kaiser_table)
+```
+
+```{r kaiser_visualization, fig.width=10, fig.height=6}
+kaiser_df <- data.frame(
+  PC = 1:min(15, length(eigenvalues)),
+  Eigenvalue = eigenvalues[1:min(15, length(eigenvalues))]
+)
+
+ggplot(kaiser_df, aes(x = factor(PC, levels = PC))) +
+  geom_bar(aes(y = Eigenvalue, fill = Eigenvalue > 1), stat = "identity") +
+  geom_hline(yintercept = 1, color = "red", linetype = "dashed", linewidth = 1.2) +
+  scale_fill_manual(values = c("TRUE" = "#2ecc71", "FALSE" = "#e74c3c"),
+                    labels = c("TRUE" = "À conserver", "FALSE" = "À rejeter")) +
+  labs(title = "9.1 Critère de Kaiser", x = "Composantes", y = "Valeur Propre", fill = "") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1),
+        panel.grid.major.y = element_line(color = "gray90"))
+```
+
+# 9.2 Variance expliquée cumulée
+
+```{r cumulative_variance_analysis}
+thresholds <- c(0.70, 0.75, 0.80, 0.85, 0.90, 0.95)
+
+variance_thresholds <- data.frame()
+for (threshold in thresholds) {
+  n_comp <- which(cumulative_variance >= threshold)[1]
+  variance_thresholds <- rbind(variance_thresholds, data.frame(
+    Threshold = paste(threshold * 100, "%", sep = ""),
+    N_Components = n_comp,
+    Actual_Variance = round(cumulative_variance[n_comp] * 100, 2)
+  ))
+}
+
+print(variance_thresholds)
+
+n_70 <- which(cumulative_variance >= 0.70)[1]
+n_80 <- which(cumulative_variance >= 0.80)[1]
+n_90 <- which(cumulative_variance >= 0.90)[1]
+```
+
+```{r cumulative_variance_plot, fig.width=12, fig.height=6}
+variance_df <- data.frame(
+  PC = 1:min(20, length(eigenvalues)),
+  Individual = variance_explained[1:min(20, length(eigenvalues))] * 100,
+  Cumulative = cumulative_variance[1:min(20, length(eigenvalues))] * 100
+)
+
+ggplot(variance_df, aes(x = PC)) +
+  geom_bar(aes(y = Individual, fill = "Variance Indiv."), stat = "identity", alpha = 0.7) +
+  geom_line(aes(y = Cumulative, color = "Variance Cum."), linewidth = 1.2, group = 1) +
+  geom_point(aes(y = Cumulative, color = "Variance Cum."), size = 2.5) +
+  geom_hline(yintercept = c(70, 80, 90), linetype = "dashed", color = "gray", alpha = 0.5) +
+  scale_fill_manual(values = c("Variance Indiv." = "#3498db")) +
+  scale_color_manual(values = c("Variance Cum." = "#e74c3c")) +
+  labs(title = "9.2 Variance Expliquée Cumulée", x = "PC", y = "Variance (%)",
+       fill = "", color = "") +
+  theme_minimal() +
+  theme(legend.position = "top", panel.grid.major.y = element_line(color = "gray90"))
+
+detail_table <- data.frame(
+  PC = 1:min(15, length(eigenvalues)),
+  Eigenvalue = round(eigenvalues[1:min(15, length(eigenvalues))], 4),
+  Var_Indiv = round(variance_explained[1:min(15, length(eigenvalues))] * 100, 2),
+  Var_Cumul = round(cumulative_variance[1:min(15, length(eigenvalues))] * 100, 2)
+)
+print(detail_table)
+```
+
+# 9.3 Analyse du graphique des valeurs propres (Scree plot)
+
+```{r scree_plot, fig.width=12, fig.height=7}
+scree_df <- data.frame(
+  PC = 1:min(20, length(eigenvalues)),
+  Eigenvalue = eigenvalues[1:min(20, length(eigenvalues))]
+)
+
+ggplot(scree_df, aes(x = PC, y = Eigenvalue)) +
+  geom_line(color = "#2c3e50", linewidth = 1.2) +
+  geom_point(color = "#e74c3c", size = 3.5) +
+  geom_hline(yintercept = 1, linetype = "dashed", color = "blue", alpha = 0.6, linewidth = 1) +
+  annotate("text", x = 18, y = 1.1, label = "Kaiser λ=1", color = "blue", size = 3.5) +
+  labs(title = "9.3 Scree Plot - Analyse des Valeurs Propres", x = "Composante", y = "Valeur Propre") +
+  theme_minimal() +
+  theme(panel.grid.major = element_line(color = "gray90"))
+```
+
+```{r elbow_detection}
+diff_eigenvalues <- diff(eigenvalues)
+pct_change <- abs(diff_eigenvalues) / eigenvalues[1:(length(eigenvalues)-1)] * 100
+
+change_table <- data.frame(
+  PC = 1:(min(14, length(diff_eigenvalues))),
+  Eigenvalue = round(eigenvalues[1:(min(14, length(diff_eigenvalues)))], 4),
+  Pct_Change = c(NA, round(pct_change[1:(min(13, length(pct_change)))], 2))
+)
+
+print(change_table)
+```
+
+# Recommandation Finale
+
+```{r recommendation}
+optimal_n <- n_80
+
+cat("Résumé des critères:\n\n")
+cat("1. Critère de Kaiser:       ", n_components_kaiser, " composantes (", 
+    round(cumulative_variance[n_components_kaiser]*100, 2), "% de variance)\n")
+cat("2. Variance expliquée 70%:  ", n_70, " composantes\n")
+cat("3. Variance expliquée 80%:  ", n_80, " composantes\n")
+cat("4. Variance expliquée 90%:  ", n_90, " composantes\n\n")
+
+cat("✓ RECOMMANDATION FINALE:\n")
+cat("  Nombre de composantes à retenir: ", optimal_n, "\n")
+cat("  Variance expliquée: ", round(cumulative_variance[optimal_n] * 100, 2), "%\n")
+cat("  Composantes: PC1 à PC", optimal_n, "\n\n")
+```
