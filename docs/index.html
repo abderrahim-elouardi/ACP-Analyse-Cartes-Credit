@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rapport d'Analyse en Composantes Principales (ACP) des Cartes de Crédit">
+  <title>ACP - Analyse des Cartes de Crédit</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+    header {
+      background-color: #2c3e50;
+      color: white;
+      padding: 20px;
+      border-radius: 5px;
+      margin-bottom: 30px;
+    }
+    h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+    h2 {
+      color: #2c3e50;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 10px;
+    }
+    .nav-section {
+      background-color: white;
+      padding: 20px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .nav-section ul {
+      list-style: none;
+      padding: 0;
+    }
+    .nav-section li {
+      margin: 10px 0;
+    }
+    .nav-section a {
+      color: #3498db;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .nav-section a:hover {
+      text-decoration: underline;
+      color: #2980b9;
+    }
+    footer {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #ddd;
+      text-align: center;
+      color: #7f8c8d;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Analyse en Composantes Principales (ACP)</h1>
+    <p>Analyse des Données de Cartes de Crédit</p>
+  </header>
+
+  <div class="nav-section">
+    <h2>Étapes de l'Analyse</h2>
+    <ul>
+      <li><a href="../R/01_analyse_exploratoire/analyse_exploratoire.html">01 - Analyse Exploratoire</a></li>
+      <li><a href="../R/02_pretraitement/pretraitement.html">02 - Prétraitement des Données</a></li>
+      <li><a href="../R/03_centrage_reduction/centrage_reduction.html">03 - Centrage et Réduction</a></li>
+      <li><a href="../R/04_correlation/correlation.html">04 - Analyse de Corrélation</a></li>
+      <li><a href="../R/05_test_adequation_acp/test_adequation_acp.html">05 - Test d'Adéquation ACP</a></li>
+      <li><a href="../R/06_acp_calcul/acp_calcul.html">06 - Calcul de l'ACP</a></li>
+      <li><a href="../R/07_choix_composantes/choix_composantes.html">07 - Choix des Composantes</a></li>
+      <li><a href="../R/08_segmentation_clustering/segmentation_clustering.html">08 - Segmentation / Clustering</a></li>
+      <li><a href="../R/09_interpretation_profils/interpretation_profils.html">09 - Interprétation des Profils</a></li>
+    </ul>
+  </div>
+  
+
+  <iframe src="rapport.pdf" width="100%" height="800px"></iframe>
+
+  <footer>
+    <p>
+        AOUAD Abdelkarim & EL OUARDI Abderrahim<br>
+        Pr. Alj Abdelkamel – Professeur (Encadrant)<br>
+        Année Universitaire 2025-2026
+    </p>
+    <p>Rapport généré avec R Markdown - Projet ACP Cartes de Crédit</p>
+  </footer>
+
+</body>
+</html>
