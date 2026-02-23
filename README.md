@@ -4,6 +4,10 @@
 
 Ce projet réalise une **Analyse en Composantes Principales (ACP)** complète sur des données de cartes de crédit afin de segmenter les clients en profils comportementaux distincts. L'objectif est d'identifier des groupes de clients ayant des comportements d'utilisation similaires pour faciliter des stratégies marketing ciblées et une meilleure compréhension du portefeuille client.
 
+## Documentation en ligne
+
+- Site du projet : [https://kwimoad.github.io/ACP-Analyse-Cartes-Credit/](https://kwimoad.github.io/ACP-Analyse-Cartes-Credit/)
+
 ### Objectifs
 
 - Réduire la dimensionnalité des données de cartes de crédit
