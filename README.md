@@ -250,7 +250,7 @@ Contributions rapides :
 
 ## Auteurs
 
-- **AOUAD Abdelkarim & EL OUARDI Abderrahim**
+- **EL OUARDI Abderrahim & AOUAD Abdelkarim **
 
 ---
 
